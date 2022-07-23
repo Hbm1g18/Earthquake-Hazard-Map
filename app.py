@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request, flash
+import os
 
 app = Flask(__name__)
+port = os.environ.get("PORT", 5000)
+app.run(debug=False, host="0.0.0.0", port=port)
 app.secret_key = 'coilline8'
 
 @app.route("/", methods=['GET','POST'])
