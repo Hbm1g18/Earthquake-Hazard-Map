@@ -1,0 +1,89 @@
+* {
+    margin:0;
+    padding:0;
+}
+.top_box{
+    background-color: rgb(218, 84, 84);
+    height:150px;
+    width:auto;
+    align-items:center;
+    flex-direction: column;
+    display:flex;
+}
+.spacer{
+    height:30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+.name{
+    height:70px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+.buttons{
+    width:900px;
+    height: 50px;
+    display: flex;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.home{
+    border-top-left-radius: 10px;
+    height:50px;
+    width:300px;
+    text-align: center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.home:hover{
+    background-color:rgb(167, 64, 64);
+}
+.home h1{
+    color:antiquewhite;
+    font-family: 'Amaranth', sans-serif;
+}
+.about{
+    height:50px;
+    width:300px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.about:hover{
+    background-color:rgb(167, 64, 64);
+}
+.about h1{
+    color: antiquewhite;
+    font-family: 'Amaranth', sans-serif;
+}
+.projects{
+    border-top-right-radius: 10px;
+    height:50px;
+    width:300px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.projects:hover{
+    background-color:rgb(167, 64, 64);
+}
+.projects h1{
+    color: antiquewhite;
+    font-family: 'Amaranth', sans-serif;
+}
+.name h1{
+    text-align: center;
+    vertical-align: middle; 
+    color:rgb(0, 0, 0);
+    font-family: 'Amaranth', sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+}
+body{
+    background-color: rgb(248, 247, 245);
+}

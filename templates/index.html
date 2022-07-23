@@ -1,0 +1,31 @@
+{% include 'base.html' %}
+	<body>
+		<a href="#top" class="arrow" aria-label="Back to top" title="Back to top">↑</a>
+<div class="container">
+    <div class="box1" id="section1">
+        <div class="starter">
+            <h1>Hi. I'm Harry</h1>
+            <div class="aboutme">
+                <p1>I'm an Msci Geology graduate from the University of Southampton looking to gain experience in the geology sector. Checkout my work on the <a href="/projects" style="text-decoration: none; color: inherit;">'Projects'</a> page or read more about me on the <a href="/about" style="text-decoration: none; color: inherit;">'About'</a> page. Feel free to get in touch with me below.</p1>
+            </div><a href="#section2" style="text-decoration: none; color: inherit;">
+                <div class="contactme">
+                    <h1>Contact me</h1>
+                </div>
+            </a>
+        </div>
+		<div class="uos">
+			<img src="{{ url_for('static',filename='images/uos.jpg') }}">
+		</div>
+		<div class="yzh">
+			<img src="{{ url_for('static',filename='images/yzh.jpg') }}">
+		</div>
+    </div>
+    <div class="containerspacer"></div>
+    <div class="box2" id="section2">
+        <a href="#top">RETURN</a>
+    </div>
+
+</div>
+
+</body>
+</html>
