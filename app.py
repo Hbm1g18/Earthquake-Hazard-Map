@@ -26,3 +26,8 @@ if __name__ == '__main__':
 # $env:FLASK_APP = "app.py"
 # $env:FLASK_DEBUG = "1"
 # flask run 
+
+# For pushing to github
+# git add -A
+# git commit -m "some text"
+# git push
