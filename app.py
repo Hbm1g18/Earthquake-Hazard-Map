@@ -21,3 +21,8 @@ def projects():
 
 if __name__ == '__main__':
     app.run(debug=False, host="0.0.0.0", port=port)
+
+# Run the app in powershell
+# $env:FLASK_APP = "app.py"
+# $env:FLASK_DEBUG = "1"
+# flask run 

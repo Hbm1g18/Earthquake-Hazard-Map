@@ -2,6 +2,20 @@
     margin:0;
     padding:0;
 }
+::-webkit-scrollbar{
+    width: 1.5em;
+}
+::-webkit-scrollbar-track{
+    background: rgb(73, 34, 34);
+}
+::-webkit-scrollbar-thumb{
+    background: rgb(129, 58, 58);
+    border: .25em solid rgb(73, 34, 34);
+    border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: rgb(185, 64, 64)
+}
 .top_box{
     background-color: rgb(218, 84, 84);
     height:150px;

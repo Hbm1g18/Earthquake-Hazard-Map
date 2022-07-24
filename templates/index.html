@@ -13,19 +13,28 @@
                 </div>
             </a>
         </div>
-		<div class="uos">
+    <a href="{{ url_for('static',filename='images/uos.JPG') }}" data-lightbox="uos" data-title="Universtiy of Southampton">	
+        <div class="uos">
 			<img src="{{ url_for('static',filename='images/uos.JPG') }}" alt="University of southampton">
 		</div>
-		<div class="yzh">
+    </a>
+    <a id="yzh" href="{{ url_for('static',filename='images/yzh.JPG') }}" data-lightbox="yzh" data-title="Harry and Yunzhen">	    
+        <div class="yzh">
 			<img src="{{ url_for('static',filename='images/yzh.JPG') }}" alt="Me and Yunzhen">
 		</div>
+    </a>    
     </div>
     <div class="containerspacer"></div>
     <div class="box2" id="section2">
-        <a href="#top">RETURN</a>
+        <div class="contactcontain">
+
+        </div>
     </div>
 
 </div>
+<!-- JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="{{ url_for('static',filename='lightbox/dist/js/lightbox.js') }}"></script>
 
 </body>
 </html>

@@ -10,6 +10,9 @@
 		<link href="https://fonts.googleapis.com/css2?family=Amaranth:wght@700&family=Josefin+Sans:ital,wght@1,700&family=Mochiy+Pop+One&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
 		<!-- Font addition end -->
+		<!-- LIGHTBOX ADD -->
+		<link href="{{ url_for('static',filename='lightbox/dist/css/lightbox.css') }}" rel="stylesheet">
+		<!-- LIGHTBOX ADDED -->
 		{% if title=="About" %}
         <link href="{{ url_for('static',filename='styles/about.css') }}" rel="stylesheet" type="text/css">
         {% elif title=="Projects" %}
@@ -17,6 +20,7 @@
         {% else %}
         <link href= "{{ url_for('static',filename='styles/style.css') }}" rel="stylesheet" type="text/css">
         {% endif %}
+		<script src="{{ url_for('static',filename='scripts/effect.js') }}"></script>
 
 <meta name="viewport" contents="width=device-width", initial-scale="1.0">
 

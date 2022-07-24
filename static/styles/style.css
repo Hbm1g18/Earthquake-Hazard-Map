@@ -3,6 +3,20 @@ html, body {margin: 0;
     overflow: hidden;
     scroll-behavior: smooth;
 }
+::-webkit-scrollbar{
+    width: 1.5em;
+}
+::-webkit-scrollbar-track{
+    background: rgb(73, 34, 34);
+}
+::-webkit-scrollbar-thumb{
+    background: rgb(129, 58, 58);
+    border: .25em solid rgb(73, 34, 34);
+    border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: rgb(185, 64, 64)
+}
 .top_box{
     background-color: rgb(243, 142, 105);
     height:150px;
@@ -187,7 +201,8 @@ body{
 }
 .box2{
     display:flex;
-    background-color: rgb(58, 146, 58);
+    align-items: center;
+    justify-content: center;
     height: 2000px;
     width: 100%;
 }
@@ -232,8 +247,10 @@ body{
     height:500px;
     margin-bottom: 930px;
     margin-left: auto;
-    margin-right: auto;
-    
+    margin-right: auto;   
+}
+#yzh{
+    margin-inline: auto;
 }
 .yzh img{
     border-radius: 3px;
@@ -245,3 +262,17 @@ body{
 .yzh img:hover{
     transform: scale(1.2); 
 }
+.contactcontain{
+    background-color:rgb(34, 34, 34);
+    border-style: outset;
+    border-color: rgb(255, 255, 255);
+    border-width: 5px;
+    border-radius: 15px;
+    height: 900px;
+    width: 1500px;
+    display: flex;
+    margin-bottom: 740px;
+    opacity: 80%;
+}
+
+  
