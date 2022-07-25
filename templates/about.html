@@ -1,10 +1,46 @@
 {% include 'base.html' %}
-<body>
+<body onload="color.js">
     <div id="page">
         <div id="container">
             <span id="text1"></span>
             <span id="text2"></span>
         </div>
+         <div id="shortcontain">   
+            
+            <a href="">
+                <div class="MenuBox" id="one">
+                    <h1>Economic Geology</h1>
+                </div>
+            </a>  
+            <a href="">
+                <div class="MenuBox" id="two">
+                    <h1>Foreign Languages</h1>
+                </div>
+            </a>  
+            <a href="">
+                <div class="MenuBox" id="three">
+                    <h1>Team environments</h1>
+                </div>
+            </a>  
+         </div>
+        <div id="shortcontain2">    
+            <a href="">
+                <div class="MenuBox" id="four">
+                    <h1>Graphic Design</h1>
+                </div>
+            </a>  
+            <a href="">
+                <div class="MenuBox" id="five">
+                    <h1>Programming</h1>
+                    <img src="{{ url_for('static',filename='images/phone.png') }}" alt="Call me!">
+                </div>
+            </a>  
+            <a href="">
+                <div class="MenuBox" id="six">
+                    <h1>Travel</h1>
+                </div>
+            </a>  
+         </div>
     </div>
     <svg id="filters">
         <defs>
@@ -17,4 +53,27 @@
         </defs>
     </svg>
     <script src="{{ url_for('static',filename='scripts/main.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+
+
+    // <!-- <script type="text/javascript">
+    //     const buttons = document.querySelectorAll('a');
+    //     buttons.forEach(btn => {
+    //         btn.addEventListener('mouseenter', function(e){
+
+    //             let x = e.clientX - e.target.offsetLeft;
+    //             let y = e.clientY - e.target.offsetTop;
+
+    //             let ripples = document.createElement('span');
+    //             ripples.style.left = x + 'px';
+    //             ripples.style.top = y + 'px',
+    //             this.appendChild(ripples);
+
+    //             setTimeout(() =>{
+    //                 ripples.remove()
+    //             }, 2000);
+    //         })
+    //     })
+    // </script> -->
 </body>

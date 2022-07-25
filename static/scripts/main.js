@@ -9,8 +9,8 @@ const texts = [
     "你好, 我叫Harry",
 ];
 
-const morphTime = 1;
-const cooldownTime = 1.5;
+const morphTime = 0.8;
+const cooldownTime = 1.4;
 
 let textIndex = texts.length - 1;
 let time = new Date();

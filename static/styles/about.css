@@ -132,28 +132,108 @@ body{
 
 #page{
     background-color: rgb(248, 248, 248);
-    display: flex;
-    width:110rem;
+    width:111rem;
     height:100%;
     margin-inline: auto;
-    flex-direction: column;
-    flex-wrap: wrap;
 }
 #container {
+    margin-top: 1rem;
     width: 100%;
     height: 100pt;
-    filter: url(#threshold) blur(0.6px);
+    filter: url(#threshold) blur(0.4px);
 }
 #text1,
 #text2 {
     position: absolute;
     width: 100%;
     display: inline-block;
-
-    font-family: "Raleway", sans-serif;
+    font-family: 'Amaranth', sans-serif;
+    font-weight: 500;
     font-size: 70pt;
-
     text-align: center;
-
     user-select: none;
+}
+#shortcontain{
+    display: inline-flex;
+    margin-inline: auto;
+    width: 100%;
+    height: 10rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 0px;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+    text-decoration-color: #00000069;
+    
+}
+.MenuBox{
+    display: inline-flex;
+    background-color:antiquewhite;
+    width: 37rem;
+    height: 10rem;
+    column-gap: 0;
+    transition: all 0.4s ease-in-out; 
+    
+}
+.MenuBox:hover{
+    transform:scale(1.1)
+}
+.MenuBox h1{
+    color: rgb(0, 0, 0);
+    font-family: 'Amaranth', sans-serif;
+    font-size: 3.5rem;
+    margin: auto;
+    transition: 0.2s ease-in-out;
+}
+/* .MenuBox h1:hover{
+    transform: translate(-3.5rem, 0);
+} */
+.MenuBox:hover > h1{
+    transform: translate(-3.5rem, 0);
+}
+#shortcontain2{
+    display: inline-flex;
+    margin-inline: auto;
+    width: 100%;
+    height: 10rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 0px;
+}
+
+#one:hover{
+    background-color: rgb(100, 136, 90);
+}
+#two:hover{
+    background-color: rgb(124, 125, 192);
+}
+#three:hover{
+    background-color: rgb(192,157,124);
+}
+#four:hover{
+    background-color: rgb(213, 185, 87);
+}
+#five:hover{
+    background-color: rgb(213,87,115);
+}
+#six:hover{
+    background-color: rgb(218, 84, 84);
+}
+#five{
+    transition: 0.2s;
+    overflow: hidden;
+}
+#five img{
+    position: relative;
+    width: 8rem;
+    height: 10rem;
+    transition: 0.2s;
+    bottom: -200px;  
+}
+#five:hover > img{
+    transform: translateY(-200px)
 }
