@@ -210,7 +210,7 @@ body{
     color: antiquewhite;
     text-decoration: none;
     position: fixed;
-    font-size: 30px;
+    font-size: 50px;
     bottom: 30px;
     right: 30px;
     padding: 18px 20px;
@@ -218,6 +218,20 @@ body{
     border-radius: 5px;
 }
 .arrow:hover {
+      background: rgba(0,0,0,.5);
+}
+.arrow2 {
+    color: antiquewhite;
+    text-decoration: none;
+    position: fixed;
+    font-size: 50px;
+    bottom: 30px;
+    right: 100px;
+    padding: 18px 20px;
+    background: rgba(0,0,0,.3);
+    border-radius: 5px;
+}
+.arrow2:hover {
       background: rgba(0,0,0,.5);
 }
 .uos{
@@ -262,17 +276,145 @@ body{
 .yzh img:hover{
     transform: scale(1.2); 
 }
-.contactcontain{
+#contactcontain{
     background-color:rgb(34, 34, 34);
-    border-style: outset;
-    border-color: rgb(255, 255, 255);
-    border-width: 5px;
     border-radius: 15px;
-    height: 900px;
-    width: 1500px;
+    height: 75rem;
+    width: 80rem;
     display: flex;
     margin-bottom: 740px;
     opacity: 80%;
+    display: flex;
+    flex-direction: column;
 }
+#mobilesec{
+    display: flex;
+    flex-direction: row;
+    height: 10rem;
+    width: auto;
+    margin-top: 5rem;
+    margin-inline: 3rem;
+}
+#mobilesec h1{
+    font-family: 'Amaranth', sans-serif;
+    margin-left: 5rem;
+    margin-block: auto;
+    color: antiquewhite;
+    font-weight: 600;
+    font-size: 4rem;
+}
+#mobilesec img{
+    height:10rem;
+    width:8rem;
+    transition: transform .5s ease;
+    margin-left: 0.5rem;
+}
+#mobilesec img:hover{
+    transform: scale(1.2);
+}
+#emailsec{
+    display: flex;
+    flex-direction: row;
+    height: 10rem;
+    width: auto;
+    margin-top: 3rem;
+    margin-inline: 3rem;
+}
+#emailsec h1{
+    font-family: 'Amaranth', sans-serif;
+    margin-left: 3.5rem;
+    margin-block: auto;
+    color: antiquewhite;
+    font-weight: 600;
+    font-size: 4rem;
+}
+#emailsec img{
+    margin-top: 1.7rem;
+    height:7.5rem;
+    width:10.5rem;
+    transition: transform .5s ease;
+    
+}
+#emailsec img:hover{
+    transform: scale(1.2); 
+}
+#formspacer{
+    display: flex;
+    flex-direction: row;
+    height: 4rem;
+    margin-top:1rem;
+    width: auto;
+}
+#formspacer h1{
+    color: antiquewhite;
+    font-family: 'Amaranth', sans-serif;
+    margin-block: auto;
+    margin-inline: auto;
+    font-weight: 600;
+    font-size: 2.5rem;
 
-  
+}
+#jsform{
+    display: flex;
+    flex-direction: row;
+    height: 40rem;
+    width: auto;
+    margin-inline: 3rem;
+}
+form{
+    background-color: rgb(255, 255, 255);
+    width: 45rem;
+    height:35rem;
+    margin-inline: auto;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 15px;
+}
+form h3{
+    color: rgb(29, 29, 29);
+    font-family: 'Amaranth', sans-serif;
+    font-weight: 600;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+form textarea{
+    border: 0;
+    margin: 1rem;
+    font-size: 1.5rem;
+    font-family: 'Amaranth', sans-serif;
+    padding:1rem;
+    height:18rem;
+    outline: none;
+    background: #c0c0c01c;
+    border-radius: 5px;
+}
+form input{
+    border: 0;
+    margin: 1rem;
+    font-size: 1.5rem;
+    font-family: 'Amaranth', sans-serif;
+    padding:1rem;
+    border-radius: 5px;
+    outline: none;
+    background: #c0c0c01c;
+}
+form button{
+    background: #ff8248;
+    font-family: 'Amaranth', sans-serif;
+    color:rgb(241, 241, 241);
+    border-radius: 20px;
+    font-size: 2rem;
+    width: 15rem;
+    border: 0;
+    outline: none;
+    margin-inline: auto;
+    cursor: pointer;
+    transition: transform .5s ease;
+}
+form button:hover{
+    background: #cc6d40;
+    transform: scale(1.1); 
+}

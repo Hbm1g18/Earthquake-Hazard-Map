@@ -2,6 +2,7 @@
 <body>
     
 <a href="#top" class="arrow" aria-label="Back to top" title="Back to top">↑</a>
+<a href="#section2" class="arrow2" aria-label="Down" title="Go down">↓</a>
 <div class="container">
     <div class="box1" id="section1">
         <div class="starter">
@@ -37,15 +38,51 @@
     </div>
     <div class="containerspacer"></div>
     <div class="box2" id="section2">
-        <div class="contactcontain">
-
+        <div id="contactcontain">
+            <div id="mobilesec">
+                <img src="{{ url_for('static',filename='images/phone.png') }}" alt="Call me!" style="height:10rem; width:8rem;">
+                <h1>Call or text me at: 07753127952</h1>
+            </div>
+            <div id="emailsec">
+                <img src="{{ url_for('static',filename='images/email.png') }}" alt="Send me an email!">
+                <h1>Or, send me an email at: harrybonshormayes@gmail.com</h1>
+            </div>
+            <div id="formspacer">
+                <h1>Or, fill out this form directly.</h1>
+            </div>
+            <div id="jsform">
+                <form onsubmit="sendEmail(); reset(); return false">
+                    <h3>Please enter the following information below:</h3>
+                    <input type="text" id="Name" placeholder="Your Name" required>
+                    <input type="email" id="Email" placeholder="Your email address" required>
+                    <input type="text" id="phonenum" placeholder="Phone number" required>
+                    <textarea id="message" rows="4" placeholder="Please write your message here"></textarea>
+                    <button type="submit">Send your message</button>
+                </form>
+            </div>
         </div>
     </div>
-
 </div>
 <!-- JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="{{ url_for('static',filename='lightbox/dist/js/lightbox.js') }}"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    function sendEmail(){
+        Email.send({
+            SecureToken: "98a6e043-7391-4470-b539-af96eb3b32b5",
+            To : "harrybonshormayes@gmail.com",
+            From : document.getElementById("Email").value,
+            Subject : document.getElementById("Name").value + " sent an emai from the website",
+            Body : "Name: " + document.getElementById("Name").value
+            + "<br> Email: " + document.getElementById("Email").value
+            + "<br> Phone Number: " + document.getElementById("phonenum").value
+            + "<br> Message: " + document.getElementById("message").value
+        }).then(
+        message => alert("Thanks for your message, I'll get back to you soon")
+        );
+    }
+</script>
 <script>
     var edit = document.querySelector("#name");
     var username = prompt("Hello, who are you?");

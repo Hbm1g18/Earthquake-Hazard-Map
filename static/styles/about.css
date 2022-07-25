@@ -61,6 +61,16 @@
     color:antiquewhite;
     font-family: 'Amaranth', sans-serif;
 }
+.home h1{
+    color:antiquewhite;
+    font-family: 'Amaranth', sans-serif;
+    transition: transform .2s;
+}
+.home h1:hover{
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
+}
 .about{
     height:50px;
     width:300px;
@@ -74,6 +84,12 @@
 .about h1{
     color: antiquewhite;
     font-family: 'Amaranth', sans-serif;
+    transition: transform .2s;
+}
+.about h1:hover{
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
 }
 .projects{
     border-top-right-radius: 10px;
@@ -89,6 +105,12 @@
 .projects h1{
     color: antiquewhite;
     font-family: 'Amaranth', sans-serif;
+    transition: transform .2s;
+}
+.projects h1:hover{
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
 }
 .name h1{
     text-align: center;
