@@ -70,9 +70,9 @@
 <script>
     function sendEmail(){
         Email.send({
-            SecureToken: "98a6e043-7391-4470-b539-af96eb3b32b5",
+            SecureToken: "6df11250-d898-4e41-87a3-4056db8b3c3b",
             To : "harrybonshormayes@gmail.com",
-            From : "harrybonshormayes@gmail.com",
+            From : document.getElementById("Email").value,
             Subject : document.getElementById("Name").value + " sent an emai from the website",
             Body : "Name: " + document.getElementById("Name").value
             + "<br> Email: " + document.getElementById("Email").value
