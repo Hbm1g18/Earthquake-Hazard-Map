@@ -299,7 +299,7 @@ body{
     font-family: 'Amaranth', sans-serif;
     margin-left: 5rem;
     margin-block: auto;
-    color: antiquewhite;
+    color: rgb(255, 255, 255);
     font-weight: 600;
     font-size: 4rem;
 }
@@ -324,7 +324,7 @@ body{
     font-family: 'Amaranth', sans-serif;
     margin-left: 3.5rem;
     margin-block: auto;
-    color: antiquewhite;
+    color: rgb(255, 255, 255);
     font-weight: 600;
     font-size: 4rem;
 }
@@ -346,7 +346,7 @@ body{
     width: auto;
 }
 #formspacer h1{
-    color: antiquewhite;
+    color: rgb(255, 255, 255);
     font-family: 'Amaranth', sans-serif;
     margin-block: auto;
     margin-inline: auto;
