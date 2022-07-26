@@ -133,7 +133,7 @@ body{
 #page{
     background-color: rgb(248, 248, 248);
     width:111rem;
-    height:100%;
+    height:auto;
     margin-inline: auto;
 }
 #container {
@@ -189,9 +189,6 @@ a:hover{
     margin: auto;
     transition: 0.2s ease-in-out;
 }
-/* .MenuBox h1:hover{
-    transform: translate(-3.5rem, 0);
-} */
 .MenuBox:hover > h1{
     transform: translate(-1.6rem, 0);
 }
@@ -308,4 +305,65 @@ a:hover{
 }
 #six:hover > img{
     transform: translateY(-180px)
+}
+#who{
+    width: auto;
+    height: 60rem;
+    margin-block: auto;
+}
+#whohead{
+    width:auto;
+    height:10rem;
+}
+#whohead h1{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 7rem;
+    font-weight: 800;
+    text-align: center;
+}
+#whop{
+    width:109rem;
+    height:auto;
+    padding-bottom: 2rem;
+    margin:auto;
+}
+#whop p1{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 2.5rem;
+}
+#lyme{
+    width:auto;
+    height: 15rem;
+    background-image: url('/static/images/lyme.jpg');
+    background-color: blue;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-bottom: 20rem;
+}
+#interests{
+    width:auto;
+    height: auto;
+}
+#interestshead{
+    width: auto;
+    height: auto;
+    background-color: aqua;
+}
+#interestshead h1{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 7rem;
+    font-weight: 800;
+    text-align: center;
+}
+#interestsbody{
+    height: auto;
+    width: 109rem;
+    margin: auto;
+    background-color: blue;
+}
+#interestsbody p1{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 2.5rem;
+    
 }
