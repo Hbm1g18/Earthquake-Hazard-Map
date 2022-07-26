@@ -1,5 +1,6 @@
 {% include 'base.html' %}
 <body>
+    <a href="#top" class="arrow" aria-label="Back to top" title="Back to top">↑</a>
     <div id="page">
         <div id="container">
             <span id="text1"></span>
@@ -13,7 +14,7 @@
                     <img src="{{ url_for('static',filename='images/seg.png') }}" alt="SEG">
                 </div>
             </a>  
-            <a href="">
+            <a href="#languagehead">
                 <div class="MenuBox" id="two">
                     <h1>Foreign Languages</h1>
                     <img src="{{ url_for('static',filename='images/mfl.png') }}" alt="Foreign languages">
@@ -65,11 +66,11 @@
                 <div id="interestsbody">
                     <p1>
                         My current main interest is in tectonic hazards (Volcanoes, earthquakes, tsunamis). These natural hazards have always been around and wont just disappear. To understand their mechanisms and results is key in mitigating damage
-                        and potential harm to life. Seeing such events take place throughout my life, and hearing about those before, surely strengthened my desire to study Geology. Out of the hazards, I am most interested in volcanics because, at the end 
+                        and potential harm to life. Seeing such events take place throughout my life, and hearing about those before, surely strengthened my desire to study Geology. <br><br>Out of all the hazards, I am most interested in volcanics because, at the end 
                         of the day, seeing them erupt is just pretty cool. Being able to glimpse deep-rooted processes occuring all across the world is simply incredible. Travelling around has allowed me to see some of these for myself, be it the eggy smelling Solfatara
                         in Italy, or the base of my masters project on the island of Tenerife. 
                     </p1>
-                    <p2><br>    
+                    <p2><br><br>    
                         Outside of geology I have a long-lasting interest in computers and programming. Starting around the age of 9 to automate tasks on a computer to creating small games. Computers have aided in widening my world-view as well as providing
                         opportunities to learn about things I would have never thought of. In this regard computers have been especially beneficial in learning foreign languages through a wealth of online sources. 
                     </p2>
@@ -84,7 +85,62 @@
                 <h1>Economic Geology</h1>
                 <img src="{{ url_for('static',filename='images/seg.png') }}" alt="SEG">
             </div>
+            <div id="segtime">
+                <h1>Secretary for the University of Southampton chapter of the Society of Economic Geology
+                    <br>2019-2020
+                </h1>
+            </div>
+            <div id="segcontain">
+                <div id="aboutseg">
+                    <h1>
+                        During my 3rd year studying at the University of Southampton I was appointed the secretary for the Society of Economic Geology. 
+                        <br><br>
+                        Interest grew during SOES3002 ('Petroleum Geology and Mineral Resources'), especially in mineral exploration at arc settings. Seeing a link between 
+                        volcanic systems and profitable excursions ignited a passion for exploration geology.
+                        <br>My main interest was in the formation of porphyry copper deposits at subduction margins.
+                    </h1>
+                </div>
+                <div id="seglogo">
+                    <img src="{{ url_for('static',filename='images/seglogo.png') }}" alt="SEG">
+                </div>
+            </div>
         </div>
+        <div id="languages" class="reveal">
+            <div id="languagehead">
+                <h1>Foreign Languages</h1>
+                <img src="{{ url_for('static',filename='images/mfl.png') }}" alt="languages">
+            </div>
+            <div id="quote">
+                <h1>If you talk to a man in a language he understands, that goes to his head. If you talk to him in his language, that goes to his heart.
+                    <br>Nelson Mandela
+                </h1>
+            </div>
+            <div id="languagecontain">
+                
+                <div id="aboutlang">
+                   <h1>I'm a firm believer that learning languages is an easy way to leave your comfort zone. There are apparently more than 7100 languages spoken in the world. Opening up and giving languages a chance brings a whole new world to you, 
+                    not only for travel but also in media that can be consumed. <br>Having Spanish under my belt following 8 years of study (including A-Level Spanish) I am now focused on learning Mandarin Chinese. With both of these languages it opens 
+                    up almost 2 billion new conversations.<br>Hover below!</h1>
+                </div>
+                <div id="langimg">
+                    <div id="ying">
+                        <h1>英语</h1>
+                        <img src="{{ url_for('static',filename='images/eng.png') }}" alt="english">
+                    </div>
+                    <div id="xiban">
+                        <h1>西班牙语</h1>
+                        <img src="{{ url_for('static',filename='images/spanish.png') }}" alt="spanish">
+                    </div>
+                    <div id="hanyu">
+                        <h1>汉语</h1>
+                        <img src="{{ url_for('static',filename='images/han.png') }}" alt="mandarin">
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div id="langcont" class="reveal">
+            <h1>yolo</h1>
+    </div>
     </div>
     <svg id="filters">
         <defs>
@@ -97,7 +153,9 @@
         </defs>
     </svg>
     <script src="{{ url_for('static',filename='scripts/main.js') }}"></script>
+    <script src="{{ url_for('static',filename='scripts/lang.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <!-- reveal on scroll -->
     <script type="text/javascript">
         window.addEventListener('scroll', reveal);
 
@@ -118,26 +176,4 @@
             }
         }
     </script>
-
-
-
-    <!-- <script type="text/javascript">
-    //     const buttons = document.querySelectorAll('a');
-    //     buttons.forEach(btn => {
-    //         btn.addEventListener('mouseenter', function(e){
-
-    //             let x = e.clientX - e.target.offsetLeft;
-    //             let y = e.clientY - e.target.offsetTop;
-
-    //             let ripples = document.createElement('span');
-    //             ripples.style.left = x + 'px';
-    //             ripples.style.top = y + 'px',
-    //             this.appendChild(ripples);
-
-    //             setTimeout(() =>{
-    //                 ripples.remove()
-    //             }, 2000);
-    //         })
-    //     })
-    // </script> -->
 </body>
