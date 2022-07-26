@@ -7,7 +7,7 @@
         </div>
          <div id="shortcontain">   
             
-            <a href="">
+            <a href="#seghead">
                 <div class="MenuBox" id="one">
                     <h1>Economic Geology</h1>
                     <img src="{{ url_for('static',filename='images/seg.png') }}" alt="SEG">
@@ -58,13 +58,31 @@
             <div id="lyme">
                 
             </div>
-            <div id="interests">
+            <div id="interests" class="reveal">
                 <div id="interestshead">
                     <h1>Current interests</h1>
                 </div>
                 <div id="interestsbody">
-                    <p1>volcanoes, computers, travel and languages</p1>
+                    <p1>
+                        My current main interest is in tectonic hazards (Volcanoes, earthquakes, tsunamis). These natural hazards have always been around and wont just disappear. To understand their mechanisms and results is key in mitigating damage
+                        and potential harm to life. Seeing such events take place throughout my life, and hearing about those before, surely strengthened my desire to study Geology. Out of the hazards, I am most interested in volcanics because, at the end 
+                        of the day, seeing them erupt is just pretty cool. Being able to glimpse deep-rooted processes occuring all across the world is simply incredible. Travelling around has allowed me to see some of these for myself, be it the eggy smelling Solfatara
+                        in Italy, or the base of my masters project on the island of Tenerife. 
+                    </p1>
+                    <p2><br>    
+                        Outside of geology I have a long-lasting interest in computers and programming. Starting around the age of 9 to automate tasks on a computer to creating small games. Computers have aided in widening my world-view as well as providing
+                        opportunities to learn about things I would have never thought of. In this regard computers have been especially beneficial in learning foreign languages through a wealth of online sources. 
+                    </p2>
                 </div>
+                <div id="volcanopic">
+                    
+                </div>
+            </div>
+        </div>
+        <div id="seg" class="reveal">
+            <div id="seghead">
+                <h1>Economic Geology</h1>
+                <img src="{{ url_for('static',filename='images/seg.png') }}" alt="SEG">
             </div>
         </div>
     </div>
@@ -80,6 +98,26 @@
     </svg>
     <script src="{{ url_for('static',filename='scripts/main.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script type="text/javascript">
+        window.addEventListener('scroll', reveal);
+
+        function reveal(){
+            var reveals = document.querySelectorAll('.reveal');
+
+            for(var i = 0; i < reveals.length; i++){
+                var windowheight = window.innerHeight;
+                var revealtop = reveals[i].getBoundingClientRect().top;
+                var revealpoint = 150;
+
+                if(revealtop < windowheight - revealpoint){
+                    reveals[i].classList.add('active');
+                }
+                else{
+                    reveals[i].classList.remove('active');
+                }
+            }
+        }
+    </script>
 
 
 

@@ -1,6 +1,7 @@
 * {
     margin:0;
     padding:0;
+    scroll-behavior: smooth;
 }
 ::-webkit-scrollbar{
     width: 1.5em;
@@ -135,6 +136,7 @@ body{
     width:111rem;
     height:auto;
     margin-inline: auto;
+    overflow: hidden;
 }
 #container {
     margin-top: 1rem;
@@ -190,7 +192,7 @@ a:hover{
     transition: 0.2s ease-in-out;
 }
 .MenuBox:hover > h1{
-    transform: translate(-1.6rem, 0);
+    transform: translate(-1.1rem, 0);
 }
 #shortcontain2{
     display: inline-flex;
@@ -214,7 +216,7 @@ a:hover{
     height: 8rem;
     transition: 0.2s;
     bottom: -200px; 
-    left: -60px;
+    left: -20px;
 }
 #one:hover > img{
     transform: translateY(-180px);
@@ -245,7 +247,7 @@ a:hover{
     height: 5rem;
     transition: 0.2s;
     bottom: -200px; 
-    left: -10px;
+    left: -30px;
 }
 #three{
     overflow: hidden;
@@ -308,8 +310,9 @@ a:hover{
 }
 #who{
     width: auto;
-    height: 60rem;
+    height: auto;
     margin-block: auto;
+    padding-bottom: 2rem;
 }
 #whohead{
     width:auto;
@@ -344,11 +347,12 @@ a:hover{
 #interests{
     width:auto;
     height: auto;
+
 }
 #interestshead{
     width: auto;
     height: auto;
-    background-color: aqua;
+    margin: auto;
 }
 #interestshead h1{
     font-family: 'Quicksand', sans-serif;
@@ -358,12 +362,79 @@ a:hover{
 }
 #interestsbody{
     height: auto;
-    width: 109rem;
-    margin: auto;
-    background-color: blue;
+    width: 80rem;
+    float:left;
 }
 #interestsbody p1{
     font-family: 'M PLUS Rounded 1c', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
+    font-weight: 600;
     
+}
+#interestsbody p2{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    
+}
+#volcanopic{
+    width:30rem;
+    height:48rem;
+    float:right;
+    background-image: url('/static/images/teide.jpg');
+    background-size: cover;
+    background-position: 60rem 100rem;
+    border-radius: 10px;
+}
+#seg{
+    display: inline-flex;
+    background-color: aqua;
+    width:100%;
+    height:60rem;
+    margin-top: 6rem;
+}
+#seghead{
+    width:100%;
+    height:10rem;
+    background-color:rgb(248, 248, 248);
+    transition: 2s ease-in-out;
+}
+#seghead h1{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 7rem;
+    font-weight: 900;
+    text-align: center;
+    color: aliceblue;
+}
+#seghead img{
+    height:10rem;
+    width:6rem;
+    position: relative;
+    top: -8.5rem;
+    left: -10rem;  
+    transition: 1s ease-in-out;
+}
+.reveal{
+    position: relative;
+    transform: translateY(15rem);
+    opacity: 0;
+    transition: 0.8s ease-in-out;
+}
+.reveal > #volcanopic{
+    position: relative;
+    transform: translateX(30rem);
+    transition: 0.8s ease-in-out;
+}
+.reveal.active > #volcanopic{
+    transform: translateX(0);
+}
+.reveal.active{
+    transform: translateY(0);
+    opacity: 1;
+}
+.reveal.active > #seghead{
+    background-color:rgb(100, 136, 90);
+}
+.reveal.active > #seghead img{
+    transform: translateX(10rem);
 }
