@@ -193,7 +193,7 @@ a:hover{
     transform: translate(-3.5rem, 0);
 } */
 .MenuBox:hover > h1{
-    transform: translate(-3.5rem, 0);
+    transform: translate(-1.6rem, 0);
 }
 #shortcontain2{
     display: inline-flex;
@@ -208,14 +208,70 @@ a:hover{
 #one:hover{
     background-color: rgb(100, 136, 90);
 }
+#one{
+    overflow: hidden;
+}
+#one img{
+    position: relative;
+    width: 4rem;
+    height: 8rem;
+    transition: 0.2s;
+    bottom: -200px; 
+    left: -60px;
+}
+#one:hover > img{
+    transform: translateY(-180px);
+}
 #two:hover{
     background-color: rgb(124, 125, 192);
 }
+#two img{
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    transition: 0.2s;
+    bottom: -200px; 
+    left: -10px;
+}
+#two:hover > img{
+    transform: translateY(-170px);
+}
+#two{
+    overflow: hidden;
+}
 #three:hover{
-    background-color: rgb(192,157,124);
+    background-color: rgb(143, 175, 184);
+}
+#three img{
+    position: relative;
+    width: 4.2rem;
+    height: 5rem;
+    transition: 0.2s;
+    bottom: -200px; 
+    left: -10px;
+}
+#three{
+    overflow: hidden;
+}
+#three:hover > img{
+    transform: translateY(-160px);
 }
 #four:hover{
     background-color: rgb(213, 185, 87);
+}
+#four img{
+    position: relative;
+    width: 8rem;
+    height: 8rem;
+    transition: 0.2s;
+    bottom: -200px; 
+    left: -30px;
+}
+#four{
+    overflow: hidden;
+}
+#four:hover > img{
+    transform: translateY(-180px);
 }
 #five:hover{
     background-color: rgb(213,87,115);
@@ -229,11 +285,27 @@ a:hover{
 }
 #five img{
     position: relative;
-    width: 8rem;
-    height: 10rem;
+    width: 7rem;
+    height: 5rem;
     transition: 0.2s;
     bottom: -200px;  
+    left: -40px;
 }
 #five:hover > img{
-    transform: translateY(-200px)
+    transform: translateY(-160px)
+}
+#six{
+    transition: 0.2s;
+    overflow: hidden;
+}
+#six img{
+    position: relative;
+    width: 8rem;
+    height: 7rem;
+    transition: 0.2s;
+    bottom: -200px;  
+    left: -40px;
+}
+#six:hover > img{
+    transform: translateY(-180px)
 }
