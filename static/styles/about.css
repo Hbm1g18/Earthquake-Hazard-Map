@@ -655,7 +655,7 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
     width:100%;
     height:auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 #langcont h1{
     font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -672,7 +672,7 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
     flex-direction: column;
     flex-wrap: wrap;
     width: 111rem;
-    height: 100rem;
+    height: auto;
 }
 #teamhead{
     width: 111rem;
@@ -713,6 +713,188 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
         transition: 0.3s ease-in-out;
 }
 #quote2 h1:hover{
+        transform: scale(1.1);
+        color: black;
+}
+#teamcontainer{
+    width:100%;
+    height:auto;
+}
+#teamphoto{
+    width: 40rem;
+    height: 55rem;
+    float:left;
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+    transition: 0.5s ease-in-out;
+    /* left: -50rem; */
+}
+#teamphoto img{
+    height: 100%;
+    width: 42rem;
+    transition: 0.3s ease-in-out;
+}
+#teamphoto img:hover{
+    transform: scale(1.1) rotate(-5deg);
+}
+#teamabout{
+    width: 71rem;
+    height: 55rem;
+    float:right;
+}
+#teamabout h1{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 1rem;
+    color: rgba(15, 15, 15, 0.774); 
+}
+#gfx{
+    width: 100%;
+    height: 70rem;
+    margin-top: 5rem;
+    background-color: blue;
+}
+#gfxhead{
+    width:100%;
+    height: 10rem;
+    transition: 0.3s ease-in-out;
+    background-color: rgb(248, 248, 248);
+}
+#gfxhead h1{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 7rem;
+    font-weight: 900;
+    text-align: center;
+    color: aliceblue;
+}
+#gfxhead img{
+    height:9rem;
+    width:8.5rem;
+    position: relative;
+    transition: 1s ease-in-out;
+    bottom:8.5rem;
+    left: -10rem;
+}
+.reveal.active > #gfx img{
+    transform: translateX(14rem)
+}
+.reveal.active > #gfxhead{
+    background-color: rgb(213, 185, 87);
+}
+#quote3 {
+    width: auto;
+    height:auto;
+}
+#quote3 h1{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+        font-size: 1.7rem;
+        font-weight: 600;
+        text-align: center;
+        color: rgba(61, 61, 61, 0.404);
+        transition: 0.3s ease-in-out;
+}
+#quote3 h1:hover{
+        transform: scale(1.1);
+        color: black;
+}
+#programming{
+    width: 100%;
+    height: 70rem;
+    margin-top: 5rem;
+    background-color: blue;
+}
+#proghead{
+    width:100%;
+    height: 10rem;
+    transition: 0.3s ease-in-out;
+    background-color: rgb(248, 248, 248);
+}
+#proghead h1{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 7rem;
+    font-weight: 900;
+    text-align: center;
+    color: aliceblue;
+}
+#proghead img{
+    height:8rem;
+    width:8.5rem;
+    position: relative;
+    transition: 1s ease-in-out;
+    bottom:8rem;
+    left: -10rem;
+}
+.reveal.active > #proghead img{
+    transform: translateX(14rem)
+}
+.reveal.active > #proghead{
+    background-color: rgb(213,87,115);
+}
+#quote4 {
+    width: auto;
+    height:auto;
+}
+#quote4 h1{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+        font-size: 1.7rem;
+        font-weight: 600;
+        text-align: center;
+        color: rgba(61, 61, 61, 0.404);
+        transition: 0.3s ease-in-out;
+}
+#quote4 h1:hover{
+        transform: scale(1.1);
+        color: black;
+}
+#trvl{
+    width: 100%;
+    height: 70rem;
+    margin-top: 5rem;
+    background-color: blue;
+}
+#trvhead{
+    width:100%;
+    height: 10rem;
+    transition: 0.3s ease-in-out;
+    background-color: rgb(248, 248, 248);
+}
+#trvhead h1{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 7rem;
+    font-weight: 900;
+    text-align: center;
+    color: aliceblue;
+}
+#trvhead img{
+    height:8rem;
+    width:8.5rem;
+    position: relative;
+    transition: 1s ease-in-out;
+    bottom:8rem;
+    left: -10rem;
+}
+.reveal.active > #trvhead img{
+    transform: translateX(14rem)
+}
+.reveal.active > #trvhead{
+    background-color: rgb(218, 84, 84);
+}
+#quote5 {
+    width: auto;
+    height:auto;
+}
+#quote5 h1{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+        font-size: 1.7rem;
+        font-weight: 600;
+        text-align: center;
+        color: rgba(61, 61, 61, 0.404);
+        transition: 0.3s ease-in-out;
+}
+#quote5 h1:hover{
         transform: scale(1.1);
         color: black;
 }

@@ -28,19 +28,19 @@
             </a>  
          </div>
         <div id="shortcontain2">    
-            <a href="">
+            <a href="#gfxhead">
                 <div class="MenuBox" id="four">
                     <h1>Graphic Design</h1>
                     <img src="{{ url_for('static',filename='images/gd.png') }}" alt="Graphics">
                 </div>
             </a>  
-            <a href="">
+            <a href="#proghead">
                 <div class="MenuBox" id="five">
                     <h1>Programming</h1>
                     <img src="{{ url_for('static',filename='images/prg.png') }}" alt="Programming">
                 </div>
             </a>  
-            <a href="">
+            <a href="#trvhead">
                 <div class="MenuBox" id="six">
                     <h1>Travel</h1>
                     <img src="{{ url_for('static',filename='images/travel.png') }}" alt="Travel">
@@ -149,9 +149,63 @@
                     <br>Aristotle
                 </h1>
             </div>
+            <div id="teamcontainer">
+                <div id="teamphoto" class="reveal">
+                    <img src="{{ url_for('static',filename='images/team.jpg') }}" alt="Boys">
+                </div>
+                <div id="teamabout">
+                    <h1>Studying at Southampton has allowed for many teamwork opportunities. From mapping trips to group projects a strong sense of teamwork was required to complete the tasks. <br><br>Working both independently within the group
+                        as well as providing each other with help and feedback facilitated efficient progress on projects.
+                        <br><br>During my 3rd year mapping project I worked alongside my mapping partner to ensure safety as well as bouncing ideas off of each other. This was further continued in 4th year mapping of Cornish localities within larger 
+                        groups. Here the focus was on 
+                        creating reports and delegating roles. Within this project my group achieved a 1st.
+                        <br><br>Another 4th year project involved working as a team to conduct an offshore site investigation for a proposed windfarm. Roles were delegated based on specialties as the group was made up of students from differing
+                        disciplines. Working together and explaining our different areas to each other allowed us to achieve a high 2:1.
+                    </h1>
+                </div>
+            </div>
         </div>
-    </div>
-    </div>
+        <div id="gfx" class="reveal">
+            <div id="gfxhead">
+                <h1>Graphics Design</h1>
+                <img src="{{ url_for('static',filename='images/gd.png') }}" alt="gfx">
+            </div>
+            <div id="quote3">
+                <h1>Design is fun.
+                </h1>
+            </div>
+            <div id="gfxcontainer">
+
+            </div>
+        </div>
+        <div id="programming" class="reveal">
+            <div id="proghead">
+                <h1>Programming</h1>
+                <img src="{{ url_for('static',filename='images/prg.png') }}" alt="Programming">
+            </div>
+            <div id="quote4">
+                <h1>I enjoy learning new ways to make things easier.
+                </h1>
+            </div>
+            <div id="progcontainer">
+
+            </div>
+        </div>
+        <div id="trvl" class="reveal">
+            <div id="trvhead">
+                <h1>Travel</h1>
+                <img src="{{ url_for('static',filename='images/travel.png') }}" alt="Travel">
+            </div>
+            <div id="quote5">
+                <h1>Who doesnt enjoy travelling?
+                </h1>
+            </div>
+            <div id="trvcontainer">
+
+            </div>
+        </div>
+</div>
+</div>
     <svg id="filters">
         <defs>
             <filter id="threshold">
@@ -163,7 +217,6 @@
         </defs>
     </svg>
     <script src="{{ url_for('static',filename='scripts/main.js') }}"></script>
-    <script src="{{ url_for('static',filename='scripts/lang.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <!-- reveal on scroll -->
     <script type="text/javascript">
