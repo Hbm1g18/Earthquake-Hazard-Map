@@ -753,9 +753,8 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 #gfx{
     width: 100%;
-    height: 70rem;
+    height: 80rem;
     margin-top: 5rem;
-    background-color: blue;
 }
 #gfxhead{
     width:100%;
@@ -778,7 +777,7 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
     bottom:8.5rem;
     left: -10rem;
 }
-.reveal.active > #gfx img{
+.reveal.active > #gfxhead img{
     transform: translateX(14rem)
 }
 .reveal.active > #gfxhead{
@@ -786,11 +785,11 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 #quote3 {
     width: auto;
-    height:auto;
+    height:2rem;
 }
 #quote3 h1{
     font-family: 'M PLUS Rounded 1c', sans-serif;
-        font-size: 1.7rem;
+        font-size: 2rem;
         font-weight: 600;
         text-align: center;
         color: rgba(61, 61, 61, 0.404);
@@ -800,11 +799,77 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
         transform: scale(1.1);
         color: black;
 }
+#gfxcontainer{
+    width: auto;
+    height:30rem;
+}
+#gfxcontainer h1{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 1rem;
+    color: rgba(15, 15, 15, 0.774); 
+}
+#c_container{
+    width:auto;
+    height: 40rem;
+}
+.carousel{
+    width:111rem;
+    height:20rem;
+    display: flex;
+    flex-direction: row;
+}
+#i_1 img{
+    width: 44rem;
+    height: 20rem;
+}
+#i_2 img{
+    width: 40rem;
+    height: 20rem;
+}
+#i_3 img{
+    width: 44rem;
+    height: 20rem;
+}
+#i_4 img{
+    width: 44rem;
+    height: 24rem;
+}
+#i_5 img{
+    width: 37rem;
+    height: 20rem;
+}
+#i_6 img{
+    position: relative;
+    right: 1rem;
+    bottom: 1rem;
+    width: 40rem;
+    height: 33rem;
+}
+#c_1{
+    background-color: azure;
+    overflow: hidden;
+}
+#c_2{
+    background-color: azure;
+    overflow: hidden;
+}
+.c_img{
+    width:37rem;
+    height:20rem;
+    transition: 0.3s ease-in-out;
+    overflow: hidden;
+}
+.c_img:hover{
+    transform: scale(1.1);
+}
+
 #programming{
     width: 100%;
-    height: 70rem;
+    height: auto;
     margin-top: 5rem;
-    background-color: blue;
 }
 #proghead{
     width:100%;
@@ -820,11 +885,11 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
     color: aliceblue;
 }
 #proghead img{
-    height:8rem;
+    height:7rem;
     width:8.5rem;
     position: relative;
     transition: 1s ease-in-out;
-    bottom:8rem;
+    bottom:7.2rem;
     left: -10rem;
 }
 .reveal.active > #proghead img{
@@ -849,10 +914,183 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
         transform: scale(1.1);
         color: black;
 }
-#trvl{
+
+#progclock{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 1rem;
+    color: rgba(15, 15, 15, 0.774); 
+}
+#quip{
+    position: relative;
+    bottom: 1.5rem;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    color: rgba(15, 15, 15, 0.527); 
+}
+#shell{
+    width: 90%;
+    height: 52rem;
+    margin-inline: auto;
+    margin-top: 1rem;
+}
+#shellhead{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 3rem;
+    background-color: black;
+}
+#shellhead h1{
+    color: white;
+    margin-block: auto;
+    margin-left: 2rem;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: 400;
+}
+#shellhead img{
+    height: 2rem;
+    width: 2.5rem;
+    margin-block: auto;
+    margin-left: 1rem;
+}
+#shellbody{
+    height: 100%;
+    width: 100%;
+    background-color: #001465;
+}
+#shsp{
+    height: 3rem;
+    width: 100%;
+}
+#min{
+    height: 3rem;
+    width: 4rem;
+    transition: 0.2s ease-in-out;
+}
+#min:hover {
+    background-color: rgb(31, 31, 31);
+}
+#min h1{
+    position: relative;
+    bottom: 1.5rem;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 4rem;
+    color: white;
+    text-align: center;
+    margin-inline: auto;
+    pointer-events: none;
+}
+#max{
+    height: 3rem;
+    width: 4rem;
+    transition: 0.2s ease-in-out;
+}
+#max:hover {
+    background-color: rgb(31, 31, 31);
+}
+#square{
+    height:1rem;
+    width: 1.2rem;
+    border: white;
+    border-style: solid;
+    margin-inline: auto;
+    margin-top:1rem;
+}
+#xbut{
+    height: 3rem;
+    width: 4rem;
+    transition: 0.2s ease-in-out;
+}
+#xbut:hover {
+    background-color: red;
+}
+#xbut h1{
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    margin-inline: auto;
+    margin-block: auto;
+    pointer-events: none;
+}
+#shtop{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+}
+#shtop h1{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-family: "Lucida Console", "Courier New", monospace;
+    color: white;
+    font-size: 2rem;
+    opacity: 0.6;
+}
+#shtop h2{
+    margin-top: 1rem;
+    margin-left: 1rem;;
+    font-family: "Lucida Console", "Courier New", monospace;
+    color: rgb(229, 255, 0);
+    font-size: 2rem;
+}
+.shellline{
+    width: 100%;
+    height: auto;
+}
+.shelltext{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-family: "Lucida Console", "Courier New", monospace;
+    color: white;
+    font-size: 2rem;
+    opacity: 0.6;
+}
+.shellquote{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-family: "Lucida Console", "Courier New", monospace;
+    color: white;
+    font-size: 2.5rem;
+    opacity: 0.85;
+}
+#sh11{
+    display: flex;
+    flex-direction: row;
+}
+#shellend{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-family: "Lucida Console", "Courier New", monospace;
+    color: white;
+    font-size: 2.5rem;
+}
+#shellend{
+    animation: blink-animation 1s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+  }
+  @keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+  @-webkit-keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+
+
+  #trvl{
     width: 100%;
     height: 70rem;
-    margin-top: 5rem;
+    margin-top: 10rem;
     background-color: blue;
 }
 #trvhead{

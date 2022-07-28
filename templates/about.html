@@ -1,6 +1,6 @@
 {% include 'base.html' %}
-<body>
-    <a href="#top" class="arrow" aria-label="Back to top" title="Back to top">↑</a>
+<body onload="startTime()">
+    <a href="#page" class="arrow" aria-label="Back to top" title="Back to top">↑</a>
     <div id="page">
         <div id="container">
             <span id="text1"></span>
@@ -8,19 +8,19 @@
         </div>
          <div id="shortcontain">   
             
-            <a href="#seghead">
+            <a href="#seg">
                 <div class="MenuBox" id="one">
                     <h1>Economic Geology</h1>
                     <img src="{{ url_for('static',filename='images/seg.png') }}" alt="SEG">
                 </div>
             </a>  
-            <a href="#languagehead">
+            <a href="#languages">
                 <div class="MenuBox" id="two">
                     <h1>Foreign Languages</h1>
                     <img src="{{ url_for('static',filename='images/mfl.png') }}" alt="Foreign languages">
                 </div>
             </a>  
-            <a href="#teamhead">
+            <a href="#team">
                 <div class="MenuBox" id="three">
                     <h1>Team environments</h1>
                     <img src="{{ url_for('static',filename='images/team.png') }}" alt="Programming">
@@ -28,19 +28,19 @@
             </a>  
          </div>
         <div id="shortcontain2">    
-            <a href="#gfxhead">
+            <a href="#gfx">
                 <div class="MenuBox" id="four">
                     <h1>Graphic Design</h1>
                     <img src="{{ url_for('static',filename='images/gd.png') }}" alt="Graphics">
                 </div>
             </a>  
-            <a href="#proghead">
+            <a href="#programming">
                 <div class="MenuBox" id="five">
                     <h1>Programming</h1>
                     <img src="{{ url_for('static',filename='images/prg.png') }}" alt="Programming">
                 </div>
             </a>  
-            <a href="#trvhead">
+            <a href="#trvl">
                 <div class="MenuBox" id="six">
                     <h1>Travel</h1>
                     <img src="{{ url_for('static',filename='images/travel.png') }}" alt="Travel">
@@ -167,7 +167,7 @@
         </div>
         <div id="gfx" class="reveal">
             <div id="gfxhead">
-                <h1>Graphics Design</h1>
+                <h1>Graphic Design</h1>
                 <img src="{{ url_for('static',filename='images/gd.png') }}" alt="gfx">
             </div>
             <div id="quote3">
@@ -175,7 +175,48 @@
                 </h1>
             </div>
             <div id="gfxcontainer">
-
+                <h1>First impressions matter. If something doesnt look good then most people end up skimming over it.
+                    <br>I believe that a clear and simple design also helps immensely in getting a point across. 
+                    <br><br>Starting with making textures in games, I have always been interested in working with graphics. Creating logos and designing documents was always something I enjoyed doing.
+                    <br><br>This was brought further at University where I was able to make my own professional looking figures. As well as this I have tried my hand at producing small videos to practice animating illustrations within educational videos.
+                    <br><br>Below are some examples, click to expand.
+                </h1>
+            </div>
+            <div id="c_container">
+                <div id="c_1" class="carousel">
+                <a href="{{ url_for('static',filename='images/i1.jpg') }}" data-lightbox="i_1" data-title="Modern Tectonics">	
+                    <div id="i_1" class="c_img">
+                        <img src="{{ url_for('static',filename='images/i1.jpg') }}" alt="Modern Tectonics">
+                    </div>
+                </a>
+                <a href="{{ url_for('static',filename='images/i2.jpg') }}" data-lightbox="i_2" data-title="Snowball Earth Trigger">
+                    <div id="i_2" class="c_img">
+                        <img src="{{ url_for('static',filename='images/i2.jpg') }}" alt="Snowball Earth">
+                    </div>
+                </a>
+                <a href="{{ url_for('static',filename='images/i3.png') }}" data-lightbox="i_3" data-title="Canyon landslide confluence">
+                    <div id="i_3" class="c_img">
+                        <img src="{{ url_for('static',filename='images/i3.png') }}" alt="Canyon Confluence">
+                    </div>
+                </a>
+                </div>
+                <div id="c_2" class="carousel">
+                    <a href="{{ url_for('static',filename='images/i4.jpg') }}" data-lightbox="i_4" data-title="Contamination Pathways">
+                    <div  class="c_img" id="i_4">
+                        <img src="{{ url_for('static',filename='images/i4.jpg') }}" alt="Contamination pathways">
+                    </div>
+                    </a>
+                    <a href="{{ url_for('static',filename='images/i5.jpg') }}" data-lightbox="i_5" data-title="Late Heavy Bombardment">
+                    <div  class="c_img" id="i_5">
+                        <img src="{{ url_for('static',filename='images/i5.jpg') }}" alt="Late Heavy Bombardment">
+                    </div>
+                    </a>
+                    <a href="{{ url_for('static',filename='images/i6.jpg') }}" data-lightbox="i_6" data-title="Japan earthquake and tsunami">
+                    <div  class="c_img" id="i_6">
+                        <img src="{{ url_for('static',filename='images/i6.jpg') }}" alt="Japan earthquake and tsunami">
+                    </div>
+                    </a>
+                </div>
             </div>
         </div>
         <div id="programming" class="reveal">
@@ -188,12 +229,67 @@
                 </h1>
             </div>
             <div id="progcontainer">
-
+                <div id="progclock"></div>
+                <div id="quip"></div>
+                <!-- This is a messy long section sheeesh -->
+                <div id="shell">
+                    <div id="shellhead">
+                        <img src="{{ url_for('static',filename='images/prg.png') }}" alt="Programming">
+                        <h1>Shell</h1>
+                        <div id="shsp"></div>
+                        <div id="min">
+                            <h1>-</h1>
+                        </div>
+                        <div id="max">
+                            <div id="square"></div>
+                        </div>
+                        <div id="xbut">
+                            <h1>X</h1>
+                        </div>
+                    </div>
+                <div id="shellbody">
+                    <div id="shtop">
+                        <h1>C:\Users\Harry></h1>
+                        <h2>py</h2>
+                    </div>
+                    <div id="sh2" class="shellline">
+                        <h1 class="shelltext">Python 3.8.0</h1>
+                    </div>
+                    <div id="sh3" class="shellline">
+                        <h1 class="shelltext">>>>print(childhood.py)</h1>
+                    </div>
+                    <div id="sh4" class="shellline">
+                        <h1 class="shellquote">"I started off young interested in HTML and .bat files as a child. It fascinated me that such simple lines could produce things on a computer."</h1>
+                    </div>
+                    <div id="sh5" class="shellline">
+                        <h1 class="shelltext">>>>print(progress.py)</h1>
+                    </div>
+                    <div id="sh6" class="shellline">
+                        <h1 class="shellquote">"Following this I made small Lua scripts for games and moved <br>on to mods in Java for Minecraft."</h1>
+                    </div>
+                    <div id="sh7" class="shellline">
+                        <h1 class="shelltext">>>>print(current.py)</h1>
+                    </div>
+                    <div id="sh8" class="shellline">
+                        <h1 class="shellquote">"My interest is now in Python for data analysis and Javascript for web design. I have experience in using Matlab for plotting and manipulating datasets"</h1>
+                    </div>
+                    <div id="sh9" class="shellline">
+                        <h1 class="shelltext">>>>print(goals.py)</h1>
+                    </div>
+                    <div id="sh10" class="shellline">
+                        <h1 class="shellquote">"I'm looking forward to discovering ways to incorporate python with GIS software as well as looking at R for statistics"</h1>
+                    </div>
+                    <div id="sh11" class="shellline">
+                        <h1 class="shelltext">>>>help "what's next?"</h1>
+                        <h2 id="shellend">_</h2>
+                    </div>
+                </div>
+                </div>
             </div>
         </div>
         <div id="trvl" class="reveal">
             <div id="trvhead">
-                <h1>Travel</h1>
+                <h1>Travel & Photography</h1>
                 <img src="{{ url_for('static',filename='images/travel.png') }}" alt="Travel">
             </div>
             <div id="quote5">
@@ -217,7 +313,10 @@
         </defs>
     </svg>
     <script src="{{ url_for('static',filename='scripts/main.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="{{ url_for('static',filename='lightbox/dist/js/lightbox.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    </py-env>
     <!-- reveal on scroll -->
     <script type="text/javascript">
         window.addEventListener('scroll', reveal);
@@ -237,6 +336,53 @@
                     reveals[i].classList.remove('active');
                 }
             }
+        }
+    </script>
+    <!-- Clock -->
+    <script>
+        function startTime() {
+          const today = new Date();
+          const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+          const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+          let h = today.getHours();
+          let m = today.getMinutes();
+          let s = today.getSeconds();
+          let day = weekday[today.getDay()];
+          let month = months[today.getMonth()];
+          var date = day + ' ' + month + ' ' + (today.getDate());
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('progclock').innerHTML ="The date is " + date + ", and the time is "+  h + ":" + m + ":" + s;
+          setTimeout(startTime, 1000);
+          if(day="Thursday"){
+            document.getElementById('quip').innerHTML ="Almost there, just two more days before the weekend";
+          }
+          else if(day="Friday"){
+            document.getElementById('quip').innerHTML ="Can't wait for the weekend? Almost here..";
+          }
+          else if(day="Saturday"){
+            document.getElementById('quip').innerHTML ="Relax, it's the weekend!";
+          }
+          else if(day="Sunday"){
+            document.getElementById('quip').innerHTML ="Don't want Monday to come..";
+          }
+          else if(day="Monday"){
+            document.getElementById('quip').innerHTML ="Monday already?";
+          }
+          else if(day="Tuesday"){
+            document.getElementById('quip').innerHTML ="Week's just getting started...";
+          }
+          else if(day="Wednesday"){
+            document.getElementById('quip').innerHTML ="We're halfway there";
+          }
+          else{
+            document.getElementById('quip').innerHTML ="Something is broken";
+          }
+        }
+        
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+          return i;
         }
     </script>
 </body>

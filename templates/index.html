@@ -38,7 +38,7 @@
     </div>
     <div class="containerspacer"></div>
     <div class="box2" id="section2">
-        <div id="contactcontain" class="reveal">
+        <div id="contactcontain">
             <div id="mobilesec">
                 <img src="{{ url_for('static',filename='images/phone.png') }}" alt="Call me!" style="height:10rem; width:8rem;">
                 <h1>Call or text me at: 07753127952</h1>
@@ -95,26 +95,6 @@
                 else {
                     edit.innerHTML = ("<h1>Hi " + username[0].toUpperCase() + username.substring(1) + ". I'm Harry</h1>");
                 }
-</script>
-<script type="text/javascript">
-    window.addEventListener('scroll', reveal);
-
-    function reveal(){
-        var reveals = document.querySelectorAll('.reveal');
-
-        for(var i = 0; i < reveals.length; i++){
-            var windowheight = window.innerHeight;
-            var revealtop = reveals[i].getBoundingClientRect().top;
-            var revealpoint = 150;
-
-            if(revealtop < windowheight - revealpoint){
-                reveals[i].classList.add('active');
-            }
-            else{
-                reveals[i].classList.remove('active');
-            }
-        }
-    }
 </script>
 </body>
 </html>
