@@ -398,10 +398,12 @@ a:hover{
     height:48rem;
     float:right;
     top:2rem;   
-    background-image: url('/static/images/teide.jpg');
-    background-size: cover;
-    background-position: 60rem 100rem;
     border-radius: 10px;
+    overflow: hidden;
+}
+#volcanopic img{
+    width:30rem;
+    height:48rem;
 }
 #seg{
     display: inline-flex;
@@ -843,10 +845,10 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 #i_6 img{
     position: relative;
-    right: 1rem;
-    bottom: 1rem;
+    right: 3rem;
+    bottom: 23rem;
     width: 40rem;
-    height: 33rem;
+    height: 60rem;
 }
 #c_1{
     background-color: azure;
@@ -1091,7 +1093,6 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
     width: 100%;
     height: 70rem;
     margin-top: 10rem;
-    background-color: blue;
 }
 #trvhead{
     width:100%;
@@ -1135,4 +1136,12 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
 #quote5 h1:hover{
         transform: scale(1.1);
         color: black;
+}
+#trvcontainer h1{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 1rem;
+    color: rgba(15, 15, 15, 0.774); 
 }
