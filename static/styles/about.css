@@ -1077,19 +1077,19 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
     animation: blink-animation 1s steps(5, start) infinite;
     -webkit-animation: blink-animation 1s steps(5, start) infinite;
   }
-  @keyframes blink-animation {
+@keyframes blink-animation {
     to {
       visibility: hidden;
     }
   }
-  @-webkit-keyframes blink-animation {
+@-webkit-keyframes blink-animation {
     to {
       visibility: hidden;
     }
   }
 
 
-  #trvl{
+#trvl{
     width: 100%;
     height: 70rem;
     margin-top: 10rem;
@@ -1145,3 +1145,70 @@ font-family: 'M PLUS Rounded 1c', sans-serif;
     margin: 1rem;
     color: rgba(15, 15, 15, 0.774); 
 }
+#desertscene {
+    height: 26.8rem;
+    width: 111rem;
+    background-color: rgb(37, 135, 247);
+    overflow: hidden;
+    animation: squigglevision 1s infinite;
+    position: relative;
+    top: 2rem;
+    }
+#pyramid{
+      width: 290px;
+      height: 250px;
+      position:relative;
+      left: 63rem;
+      top: 10rem;
+    }
+#cloud1{
+      position: relative;
+      width: 500px;
+      height: 100px;
+      bottom: 15rem;
+      right: 28rem;
+      animation: moveright 20s linear infinite, squigglevision 0.5s infinite;
+      
+    }
+@keyframes moveright{
+      100%{
+        transform: translateX(150rem);
+      }
+    }
+#cloud2{
+      position: relative;
+      width: 500px;
+      height: 100px;
+      bottom: 15rem;
+      right: 28rem;
+      animation: moveright 20s linear infinite, squigglevision 0.5s infinite;
+      animation-delay: 10s;
+    }
+#desert{
+      position: relative;
+      bottom: 22rem;
+      animation: squigglevision 0.5s infinite;
+    }
+    
+@keyframes squigglevision {
+      0% {
+        -webkit-filter: url('#squiggly-0');
+        filter: url('#squiggly-0');
+      }
+      25% {
+        -webkit-filter: url('#squiggly-1');
+        filter: url('#squiggly-1');
+      }
+      50% {
+        -webkit-filter: url('#squiggly-2');
+        filter: url('#squiggly-2');
+      }
+      75% {
+        -webkit-filter: url('#squiggly-3');
+        filter: url('#squiggly-3');
+      }
+      100% {
+        -webkit-filter: url('#squiggly-4');
+        filter: url('#squiggly-4');
+      }
+    }
