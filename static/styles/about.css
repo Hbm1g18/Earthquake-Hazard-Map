@@ -40,6 +40,54 @@ body{
     );
     background-size: 60px 60px;
 }
+#linkcontainer{
+    position: fixed;
+    width: 300px;
+    height: 220px;
+    left: 1rem;
+    top: 40rem;
+    overflow: hidden;
+}
+#linktext{
+    height: auto;
+    width: auto;
+    position: relative;
+    background-color: #5bb4fd;
+    top: 100px;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    animation-delay: 2s;
+}
+#linktext h1{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0.5rem;
+    color: rgb(255, 255, 255); 
+}
+.linkedin:hover > #linkcontainer > #linkedbox{
+    opacity: 0.9;
+    transform: scale(1.5);
+    transform: rotate(360deg);
+}
+.linkedin:hover > #linkcontainer > #linktext{
+    transform: translateY(-95px);
+    opacity: 1;
+}
+#linkedbox{
+    width: 100px;
+    height: 100px;
+    margin-inline: auto;
+    margin-top: 1rem;
+    opacity: 0.3;
+    transform: rotate(-90deg);
+    transition: 0.6s ease-in-out;
+}
+#linkedbox img{
+    width: 100%;
+    height: 100%;
+}
 .top_box{
     background-color: rgb(243, 206, 105);
     height:150px;

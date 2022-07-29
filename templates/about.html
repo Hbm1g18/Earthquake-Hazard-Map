@@ -1,6 +1,16 @@
 {% include 'base.html' %}
 <body onload="startTime()">
     <a href="#page" class="arrow" aria-label="Back to top" title="Back to top">↑</a>
+    <a href="https://www.linkedin.com/in/harry-bonshor-mayes-5a2236199/" target="_blank" class="linkedin" aria-label="My LinkedIn" title="LinkedIn">
+        <div id="linkcontainer">
+            <div id="linkedbox">
+                <img src="{{ url_for('static',filename='images/linked.png') }}" alt="My LinkedIn">
+            </div>
+            <div id="linktext">
+                <h1>Check out my LinkedIn!</h1>
+            </div>
+        </div>
+    </a>
     <div id="page">
         <div id="container">
             <span id="text1"></span>
@@ -461,25 +471,25 @@
           s = checkTime(s);
           document.getElementById('progclock').innerHTML ="The date is " + date + ", and the time is "+  h + ":" + m + ":" + s;
           setTimeout(startTime, 1000);
-          if(day="Thursday"){
+          if(day=="Thursday"){
             document.getElementById('quip').innerHTML ="Almost there, just two more days before the weekend";
           }
-          else if(day="Friday"){
+          else if(day=="Friday"){
             document.getElementById('quip').innerHTML ="Can't wait for the weekend? Almost here..";
           }
-          else if(day="Saturday"){
+          else if(day=="Saturday"){
             document.getElementById('quip').innerHTML ="Relax, it's the weekend!";
           }
-          else if(day="Sunday"){
+          else if(day=="Sunday"){
             document.getElementById('quip').innerHTML ="Don't want Monday to come..";
           }
-          else if(day="Monday"){
+          else if(day=="Monday"){
             document.getElementById('quip').innerHTML ="Monday already?";
           }
-          else if(day="Tuesday"){
+          else if(day=="Tuesday"){
             document.getElementById('quip').innerHTML ="Week's just getting started...";
           }
-          else if(day="Wednesday"){
+          else if(day=="Wednesday"){
             document.getElementById('quip').innerHTML ="We're halfway there";
           }
           else{

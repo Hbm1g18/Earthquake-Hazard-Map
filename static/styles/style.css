@@ -46,6 +46,58 @@ html, body {margin: 0;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
+
+.alert{
+    text-decoration: none;
+    cursor: default;
+}
+
+#alertbox{
+    height: 60px;
+    width: 600px;
+    top: 10rem;
+    left: 8rem;
+    position: absolute;
+    overflow: hidden;
+}
+#alertimg {
+    height:60px;
+    width: 60px;
+    opacity: 0.5;
+    transition: 0.2s ease-in-out;
+}
+#alertimg img{
+    width: 100%;
+    height: 100%;
+}
+
+#alertmsg{
+    position: relative;
+    left: 4rem;
+    top: 1rem;
+    width: 520px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.521);
+    transition: 0.5s ease-in-out;
+}
+#alertmsg H1{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    position: relative;
+    top: 0.5rem;
+}
+#alertimg:hover{
+    transform: rotate(-30deg);
+    opacity: 1;
+}
+#alertimg:hover + #alertmsg{
+    transform: translateY(-4.8rem);
+}
+
+
 .home{
     border-top-left-radius: 10px;
     height:50px;
@@ -216,6 +268,54 @@ body{
     padding: 18px 20px;
     background: rgba(0,0,0,.3);
     border-radius: 5px;
+}
+#linkcontainer{
+    position: fixed;
+    width: 300px;
+    height: 220px;
+    left: 1rem;
+    top: 40rem;
+    overflow: hidden;
+}
+#linktext{
+    height: auto;
+    width: auto;
+    position: relative;
+    background-color: #5bb4fd;
+    top: 100px;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    animation-delay: 2s;
+}
+#linktext h1{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0.5rem;
+    color: rgb(255, 255, 255); 
+}
+.linkedin:hover > #linkcontainer > #linkedbox{
+    opacity: 0.9;
+    transform: scale(1.5);
+    transform: rotate(360deg);
+}
+.linkedin:hover > #linkcontainer > #linktext{
+    transform: translateY(-95px);
+    opacity: 1;
+}
+#linkedbox{
+    width: 100px;
+    height: 100px;
+    margin-inline: auto;
+    margin-top: 1rem;
+    opacity: 0.3;
+    transform: rotate(-90deg);
+    transition: 0.6s ease-in-out;
+}
+#linkedbox img{
+    width: 100%;
+    height: 100%;
 }
 .arrow:hover {
       background: rgba(0,0,0,.5);
