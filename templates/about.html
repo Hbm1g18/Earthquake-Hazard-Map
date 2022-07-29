@@ -1,16 +1,32 @@
 {% include 'base.html' %}
 <body onload="startTime()">
     <a href="#page" class="arrow" aria-label="Back to top" title="Back to top">↑</a>
-    <a href="https://www.linkedin.com/in/harry-bonshor-mayes-5a2236199/" target="_blank" class="linkedin" aria-label="My LinkedIn" title="LinkedIn">
-        <div id="linkcontainer">
-            <div id="linkedbox">
-                <img src="{{ url_for('static',filename='images/linked.png') }}" alt="My LinkedIn">
-            </div>
-            <div id="linktext">
-                <h1>Check out my LinkedIn!</h1>
-            </div>
+<!-- Linked In Button -->
+<a href="https://www.linkedin.com/in/harry-bonshor-mayes-5a2236199/" target="_blank" class="linkedin" id="linkedinbutton" aria-label="My LinkedIn" title="LinkedIn">
+    <div id="linkcontainer">
+        <div id="linkedbox">
+            <img src="{{ url_for('static',filename='images/linked.png') }}" alt="My LinkedIn">
         </div>
-    </a>
+        <div id="linktext">
+            <h1>Check out my LinkedIn!</h1>
+        </div>
+    </div>
+</a>
+
+<!-- modal section -->
+<!-- Li popup -->
+<div class="bg-modal">
+	<div class="modal-contents">
+		<img src="{{ url_for('static',filename='images/modalimg.jpg') }}" alt="Have a Donut">
+		<h1>Thanks for checking out my LinkedIn, it means a lot.
+			<br><br> Have a donut.
+		</h1>
+		<div class="closemodal" id="modalcloser">+</div>
+	</div>
+
+</div>
+<!-- modal end -->
+
     <div id="page">
         <div id="container">
             <span id="text1"></span>
@@ -314,6 +330,7 @@
                 </h1>
             </div>
 
+            <!-- desert start -->
             <div id="desertscene">
                 <div id="pyramid">
                     <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -576,4 +593,16 @@
           return i;
         }
     </script>
+    <!-- li popup -->
+<script>
+	document.getElementById('linkedinbutton').addEventListener('click', function(){
+		document.querySelector('.bg-modal').style.display = 'flex';
+	})
+</script>
+<script>
+	document.getElementById('modalcloser').addEventListener('click', function(){
+		document.querySelector('.bg-modal').style.display = 'none';
+	})
+</script>
+<!-- li popup end -->
 </body>

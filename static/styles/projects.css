@@ -172,6 +172,60 @@ body{
     height: 100%;
 }
 
+/* popup */
+.bg-modal{
+    width:100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.205);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+  }
+  
+  .modal-contents{
+    border-radius: 20px;
+    width: 60rem;
+    height: 40rem;
+    background-color: antiquewhite;
+    overflow: hidden;
+  }
+  
+  .modal-contents h1{
+    position: relative;
+    font-size: 3.5rem;
+    color: white;
+    bottom: 40rem;
+    text-align: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 600;
+  }
+  
+  .modal-contents img{
+    position: relative;
+    right: 5rem;
+    width: 115%;
+    height: 100%;
+  }
+  .closemodal{
+    position: relative;
+    left: 47rem;
+    bottom: 12rem;
+    font-size: 8rem;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: rgb(39, 39, 39);
+    font-weight: bolder;
+    transform: rotate(45deg);
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    opacity: 0.3;
+  }
+  .closemodal:hover{
+    opacity: 1;
+  }
+  /* end popup */
 
 #testing{
     width: 100rem;
