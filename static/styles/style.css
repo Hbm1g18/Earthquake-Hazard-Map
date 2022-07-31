@@ -47,6 +47,82 @@ html, body {margin: 0;
     border-top-right-radius: 10px;
 }
 
+#getname{
+    width:100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.205);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #namebody{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 40rem;
+    height: 20rem;
+    background-color: rgb(165, 234, 236);
+  }
+  #messed{
+    position: relative;
+    top:3rem;
+    font-size: 3.5rem;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 600;
+  }
+  #namebtn{
+    cursor: pointer;
+    width:10rem;
+    height:5rem;
+    position: relative;
+    top:5rem;
+    background-color: #cc6d40;
+    border-radius: 1rem;
+    
+  }
+  #namebtn h1{
+    text-align: center;
+    color: white;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 600;
+  }
+  #namecloser{
+    position: relative;
+    left: 18rem;
+    top: 1rem;
+    font-size: 5rem;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: rgb(39, 39, 39);
+    font-weight: bolder;
+    transform: rotate(45deg);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    opacity: 0.3;
+  }
+  #namecloser:hover{
+    opacity: 1;
+  }
+  #login_name{
+    border: 0;
+      margin: 1rem;
+      font-size: 1.5rem;
+      font-family: 'Amaranth', sans-serif;
+      padding:1rem;
+      border-radius: 5px;
+      outline: none;
+      background: #ffffff;
+      text-align: center;
+      position: relative;
+      top: 4rem;
+  }
+
 .alert{
     text-decoration: none;
     cursor: default;

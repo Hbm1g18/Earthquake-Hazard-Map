@@ -1,8 +1,12 @@
 * {
     margin:0;
     padding:0;
+    scroll-behavior: smooth;
 }
-::-webkit-scrollbar{
+body::-webkit-scrollbar{
+    display: none;
+}
+/* ::-webkit-scrollbar{
     width: 1.5em;
 }
 ::-webkit-scrollbar-track{
@@ -15,7 +19,7 @@
 }
 ::-webkit-scrollbar-thumb:hover{
     background: rgb(185, 64, 64)
-}
+} */
 .top_box{
     background-color: rgb(218, 84, 84);
     height:150px;
@@ -121,10 +125,15 @@
     font-size: 50px;
 }
 body{
-    background-color: rgb(248, 247, 245);
+    background-color:rgb(255, 255, 255);
+    background-image: radial-gradient(
+        #dfdfdf1c 20px,
+        transparent 20px
+    );
+    background-size: 60px 60px;
 }
 #linkcontainer{
-    position: fixed;
+    position: absolute;
     width: 300px;
     height: 220px;
     left: 1rem;
@@ -171,60 +180,6 @@ body{
     width: 100%;
     height: 100%;
 }
-
-/* delete soon */
-body{
-    overflow: hidden;
-}
-
-#deleteme{
-    width:100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.384);
-    position: absolute;
-    top: 9.4rem;;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
-
-#deletecontent{
-    border-radius: 20px;
-    width: 60rem;
-    height: 40rem;
-    opacity: 0;
-    top: 40rem;
-    background-color: rgb(114, 24, 24);
-    animation: fadeInAnimation ease-in-out 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-delay: 2s;
-}
-
-#deletecontent h1{
-    position: relative;
-    font-size: 3.5rem;
-    color: white;
-    top:3rem;
-    text-align: center;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-    font-weight: 600;
-}
-
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(-10rem);
-     }
-}
-
-/* delete */
 
 
 /* popup */
@@ -282,9 +237,592 @@ body{
   }
   /* end popup */
 
-#testing{
+#proj-home{
+    position: relative;
+    top: 5rem;
     width: 100rem;
-    height:100rem;
-    background-color:rgb(250, 235, 215);
+    height:80.5rem;
     margin-inline: auto;
+    opacity: 0;
+    animation: fadeInAnimation ease-in-out 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.3s;
+    /* background-color:aquamarine; */
+}
+#checkout{
+    position: relative;
+    top: 15rem;
+    font-family: 'Amaranth', sans-serif;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 7rem;
+}
+#button-holder{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100rem;
+    height: 8rem;
+    position: relative;
+    top: 25rem;
+    transition: 0.5s;
+}
+.btn-link{
+    overflow: hidden;
+    width: 20rem;
+    height:8rem;
+}
+.slider{
+    width:21rem;
+    height:10rem;
+    position: relative;
+    top: 7.5rem;
+    right: 0.5rem;
+    transition: 0.3s ease-in-out;
+}
+#dis-col{
+    background-color: rgb(107, 196, 223);
+}
+#msci-col{
+    background-color: rgb(223, 116, 116);
+}
+#cv-col{
+    background-color: rgb(130, 196, 124);
+}
+#back-col{
+    background-color: rgb(164, 123, 172);
+}
+
+#contbtn{
+    position: absolute;
+    right: 0;
+    top: 163rem;
+}
+#backbtn{
+    position: absolute;
+    left: 0;
+    top: 89.8rem;
+}
+#backbtn2{
+    position: absolute;
+    left: 0;
+    top: 190.3rem;
+}
+
+.btn-link h1{
+    position: relative;
+    bottom: 8rem;
+    font-family: 'Amaranth', sans-serif;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 3rem;
+    color: black;
+    transition: 0.3s ease-in-out;
+}
+.proj-a{
+    text-decoration: none;
+    cursor: pointer;
+}
+.proj-a:hover > .btn-link > .slider{
+    transform: translateY(-9rem);
+}
+.proj-home{
+    animation: fadeInAnimation ease-in-out 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-5rem);
+     }
+}
+
+#mapping{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90.5rem;
+    /* background-color: beige; */
+}
+#mapttl{
+    position: relative;
+    font-family: 'Amaranth', sans-serif;
+    text-align: center;
+    font-weight: bolder;
+    top: 50.5rem;
+    font-size: 5rem;
+    color: black;
+}
+#mapsub{
+    position: relative;
+    font-family: 'Amaranth', sans-serif;
+    text-align: center;
+    font-weight: bolder;
+    top:49.5rem;
+    font-size: 3rem;
+    color: rgba(0, 0, 0, 0.562);
+}
+#map{
+    position: relative;
+    top:60rem;
+    width: 45rem;
+    height: 62rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+#map  img{
+    height: 100%;
+    width: 100%;
+}
+#maplocatebox{
+    width: 70rem;
+    height: 20rem;
+    position: relative;
+    bottom: 11rem;
+}
+#maplocation{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    font-size: 2rem;
+    color: black;
+}
+
+#fieldmethods{
+    width: 56rem;
+    height: auto;
+
+    position: relative;
+    right: 51rem;
+    bottom: 11rem;
+}
+
+#fieldmethods h1{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    font-size: 3rem;
+}
+#fieldmethods h2{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.5rem;
+}
+#digitalmethods{
+    width: 56rem;
+    height: auto;
+    position: relative;
+    left: 51rem;
+    bottom:39.5rem;
+}
+
+#digitalmethods h1{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    font-size: 3rem;
+}
+#digitalmethods h2{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.5rem;
+}
+#memapping{
+    position: relative;
+    width: 40rem;
+    height: 30rem;
+    bottom: 57rem;
+    right: 51rem;
+    background-color: black;
+    border-radius: 1rem;
+}
+#memapping img{
+    width: 40rem;
+    height: 30rem;
+}
+
+
+
+
+.hoverbtn{
+    background-color: rgb(0, 0, 0);
+    transition: 0.3s ease-in-out;
+  }
+#popfx{
+    position: relative;
+    right:0.3rem;
+    bottom: 0.4rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 5px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    transform: scale(0);
+    animation: btnflash 1s infinite ease-in-out;
+    animation-delay: 0.5s;
+}
+  
+@keyframes btnflash {
+    0% {
+        transform: scale(0);
+    }
+    75% {
+      transform: scale(0.9);
+    }
+    100% {
+        transform: scale(0.9);
+        opacity: 0;
+     }
+}
+  
+  
+.hoverbtn:hover{
+    transform: scale(1.2);
+    background-color: rgb(32, 32, 32);
+}
+  
+.hoverbtn:hover > .popmenu{
+    transform: scale(1);
+}
+  
+.popmenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform: scale(0);  
+    transition: 0.5s ease-in-out;
+}
+#pop1{
+    width: 65rem;
+    height: 40rem;
+    bottom: 30rem;
+    left: 5rem;
+    border: 10px;
+    border-style: solid;
+    border-color: black;
+    background-color: rgba(32, 32, 32, 0.658);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+#pop1 img{
+    height: 100%;
+    width: 100%;
+}
+/* zoom in on map */
+#hov1{
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    bottom: 85rem;
+    right: 15rem;
+
+}
+/* digital datasets */
+#hov2{
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    bottom: 118rem;
+    left: 35rem;
+
+}
+#pop2{
+    width: 33rem;
+    height: 16rem;
+    right: 20rem;
+    border: 10px;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#pop2 h1{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 1.5rem;
+}
+/* stratigraphy popup */
+#showstrat{
+    position: relative;
+    left: 27rem;
+    bottom: 125.5rem;
+    width: 12rem;
+    height: 0.3rem;
+    background-color: rgba(0, 0, 0, 0.534);
+    cursor: pointer;
+}
+#strat{
+    position: relative;
+    left: 10rem;
+    bottom: 10rem;
+    height: 50rem;
+    width: 30rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+#strat img{
+    width: 100%;
+    height: 100%
+}
+
+
+
+
+
+
+
+
+
+
+#msciteide{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10rem;
+    position: relative;
+    top:11.5rem;
+    /* background-color: aqua; */
+}
+#mscittl{
+    position: relative;
+    font-family: 'Amaranth', sans-serif;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 5rem;
+    color: black;
+}
+#mscisub{
+    position: relative;
+    font-family: 'Amaranth', sans-serif;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 3rem;
+    color: rgba(0, 0, 0, 0.562);
+}
+#mscibodcont{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 72.5rem;
+    position: relative;
+    top:10rem;
+}
+#mscibody{
+    width: 87%;
+    height: 100%;
+}
+#abttenerife{
+    position: relative;
+    top:1rem;
+    width: 139.2rem;
+    height: 12rem;
+
+}
+#abttenerife h1{
+    text-align: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+#labwork{
+    position: relative;
+    width: 45%;
+    height: 80%;
+}
+#labttl{
+    width: 100%;
+    height: 5rem;
+}
+#labttl h1{
+    text-align: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 3rem;
+}
+#labbdy{
+    width: 100%;
+    height: 40%;
+}
+#labbdy h1{
+    text-align: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 1.8rem;
+}
+#labphoto{
+    position: relative;
+    left: 13rem;
+    width: 35rem;;
+    height:28rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+#labphoto img{
+    margin-top: 2rem;
+    height: 100%;
+    width: 100%;
+}
+#results{
+    position: relative;
+    left: 63rem;
+    bottom: 57rem;
+    width: 76rem;
+    height: 57.8rem;
+}
+#mingledimg{
+    position: relative;
+    bottom: 2rem;
+    left: 11rem;;
+    width: 85rem;
+    height: 37rem;
+}
+#mingledimg img{
+    height: 100%;
+    width: 65%;
+}
+#resultstxt{
+    position: relative;
+    bottom: 2rem;
+    margin-top: 1rem;
+    width: 76rem;
+    height: auto;
+}
+#resultstxt h1{
+    text-align: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 1.7rem;
+}
+#logphoto{
+    width: 13%;
+    height: 72.5rem;
+    /* background-color: rgb(48, 156, 102); */
+}
+#logphoto img{
+    width:100%;
+    height:100%;
+}
+
+
+/* Time for hovers */
+/* Felsic mafic image */
+#hov3{
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    bottom: 65rem;
+    left: 25rem;
+
+}
+#pop3{
+    width: 40rem;
+    height: 40rem;
+    right: 10rem;
+    border: 10px;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#pop3 h1{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 1.5rem;
+}
+#pop3 img{
+    height: 100%;
+    width: 100%;
+}
+/* Pb plots */
+#hov4{
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    bottom: 16rem;
+    left: 60rem;
+
+}
+#pop4{
+    width: 60rem;
+    height: 40rem;
+    right: 10rem;
+    bottom: 45rem;
+    border: 10px;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#pop4 img{
+    height: 100%;
+    width: 100%;
+}
+/* Ages of rocks */
+#hov5{
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    bottom: 8.5rem;
+    left: 110rem;
+
+}
+#pop5{
+    width: 40rem;
+    height: 40rem;
+    right: 17rem;
+    bottom: 50rem;
+    border: 10px;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#pop5 img{
+    height: 100%;
+    width: 100%;
+}
+
+/* Spider plots*/
+#hov6{
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    bottom: 5.5rem;
+    left: 62rem;
+
+}
+#pop6{
+    width: 60rem;
+    height: 40rem;
+    right: 10rem;
+    bottom: 50rem;
+    border: 10px;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#pop6 img{
+    height: 100%;
+    width: 100%;
 }

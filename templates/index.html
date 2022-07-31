@@ -4,6 +4,16 @@
 <a href="#top" class="arrow" aria-label="Back to top" title="Back to top">↑</a>
 <a href="#section2" class="arrow2" aria-label="Down" title="Go down">↓</a>
 
+<div id="getname">
+	<div id="namebody">
+		<h1 id="messed">Hey, who is this?</h1>
+		<input type="text" id="login_name" placeholder="Your Name" >
+		<div id="namebtn">
+            <h1>Ok!</h1>
+        </div>
+		<div id="namecloser">+</div>
+	</div>
+</div>
 
 <!-- Alert button -->
 <a href="#" class="alert">
@@ -41,6 +51,7 @@
 
 </div>
 <!-- modal end -->
+
 
 <!-- The body -->
 <div class="container">
@@ -140,8 +151,34 @@
         );
     }
 </script>
-<!-- Login bit -->
+<!-- new -->
 <script>
+	var edit2 = document.querySelector("#name");
+
+	document.getElementById('namebtn').addEventListener('click', function(){
+	var nombre = document.getElementById('login_name').value;
+	
+	if(nombre.toLowerCase()==="yunzhen") {
+                edit2.innerHTML = ("<h1>Hello " + nombre[0].toUpperCase() + nombre.substring(1) + " I love you</h1>");
+				document.querySelector('#getname').style.display = 'none';
+            }
+            else {
+                edit2.innerHTML = ("<h1>Hi " + nombre[0].toUpperCase() + nombre.substring(1) + ". I'm Harry</h1>");
+				document.querySelector('#getname').style.display = 'none';
+            }	
+
+	})
+</script>
+<script>
+	document.getElementById('namecloser').addEventListener('click', function(){
+		document.querySelector('#getname').style.display = 'none';
+	})
+</script>
+
+
+
+<!-- Login bit -->
+<!-- <script>
     var edit = document.querySelector("#name");
     var username = prompt("Hello, who are you?");
 
@@ -151,6 +188,6 @@
                 else {
                     edit.innerHTML = ("<h1>Hi " + username[0].toUpperCase() + username.substring(1) + ". I'm Harry</h1>");
                 }
-</script>
+</script> -->
 </body>
 </html>
