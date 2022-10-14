@@ -1,0 +1,810 @@
+/* # */
+body {
+    background: url("{{ url_for('static',filename='images/bg/bg.jpg') }}") no-repeat center center fixed;
+    background-size: cover;
+  }
+
+::-webkit-scrollbar-track {
+    background: rgb(73, 34, 34);
+}
+#hamburger{
+    position: fixed;
+    left: 4vw;
+    top: 4vw;
+    width: 4vw;
+    height: 4vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: ease-in-out;
+    transition: 0.2s;
+}
+#hamburger:hover{
+    cursor: pointer;
+}
+#hamburger:hover > * {
+    border-color: black;
+}
+
+#top, #mid, #bot{
+    width: 4vw;
+    height: 0.8vw;
+    background-color: rgb(240, 233, 223);
+    border-radius: 1vw;
+    transition: ease-in-out;
+    transition: 0.8s;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+    border-radius: 0.5vw;
+}
+
+.menu{
+    position: fixed;
+    top: 8.2vw;
+    left: 4vw;
+    width: 12vw;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s;
+    transform: scale(0);
+}
+#hamburger:hover > .menu{
+    transform: scale(1);
+}
+.menubtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12vw;
+    height: 4vw;
+    background-color: rgb(26, 26, 26);
+    font-family: 'Amaranth', sans-serif;
+    color: white;
+    font-size: 1vw;
+}
+.menubtn:hover{
+    background-color: rgb(8, 8, 8);
+    cursor: pointer;
+}
+
+#latest-earthquake{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+}
+#volcano-map{
+    position: fixed;
+    top: 5.3vw;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+
+#viewDiv {
+  padding: 0;
+  margin: 0;
+  height: 15vw;
+  width: 40vw;
+}
+.map {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    height: 15vw;
+    width: 40vw;
+  }
+#viewDiv2 {
+  padding: 0;
+  margin: 0;
+  height: 15vw;
+  width: 15vw;
+}
+.squaremap {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    height: 15vw;
+    width: 15vw;
+    right: 20vw;
+  }
+#viewDiv7{
+    border: 0.2vw;
+    border-style: solid;
+    border-color: black;
+    border-radius: 0.2vw;
+    display: none;
+  }
+#viewDiv8{
+    border: 0.2vw;
+    border-style: solid;
+    border-color: black;
+    border-radius: 0.2vw;
+    display: none;
+  }
+#viewDiv3 {
+    padding: 0;
+    margin: 0;
+    margin-top: 1vw;
+    height: 80vh;
+    width: 70vw;
+    border: 0.2vw;
+    border-style: solid;
+    border-color: black;
+    border-radius: 0.2vw;
+  }
+
+#infocenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+#quakeinfo{
+    width: 40vw;
+    height: 25vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#ttl {
+    height: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(240, 233, 223);
+    border-radius: 1vw;
+    margin-top: 0vw;
+    padding-inline: 1vw;
+}
+#vttl{
+    height: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(240, 233, 223);
+    border-radius: 1vw;
+    margin-top: -4vw;
+    padding-inline: 1vw;
+}
+#ttl h1, #vttl h1{
+    font-size: 3vw;
+    font-family: 'Amaranth', sans-serif;
+}
+#loc{
+    /* width: 100%; */
+    padding-right: 1vw;
+    padding-left: 1vw;
+    margin-top: 2vw;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(240, 233, 223);
+    border-radius: 1vw;
+}
+#loc p{
+    font-size: 2vw;
+    font-family: 'Amaranth', sans-serif;
+    text-align: center;
+}
+#mag{
+    padding-inline: 1vw;
+    height: 2.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(240, 233, 223);
+    border-radius: 1vw;
+    margin-top: 2vw;
+}
+#mag p{
+    font-size: 2vw;
+    font-family: 'Amaranth', sans-serif;
+}
+#realtime{
+    padding-inline: 1vw;
+    height: 2.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(240, 233, 223);
+    border-radius: 1vw;
+    margin-top: 2vw;
+}
+#realtime p{
+    font-size: 2vw;
+    font-family: 'Amaranth', sans-serif;
+}
+#mapcenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+#mapholder{
+    left: 3vw;
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 56.5vw;
+    height: 15vw;
+}
+#viewDiv{
+    border: 0.2vw;
+    border-style: solid;
+    border-color: black;
+    border-radius: 0.2vw;
+}
+#viewDiv2{
+    border: 0.2vw;
+    border-style: solid;
+    border-color: black;
+    border-radius: 0.2vw;
+}
+
+#change{
+    position: fixed;
+    right: 3vw;
+    top: 5vw;
+    height: 15vw;
+    width: 20vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    
+}
+
+#changehorizontal {
+    height: 15vw;
+    width: 20vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#changevertical {
+    height: 10vw;
+    width: 20vw;
+    /* display: flex;
+    flex-direction: row; */
+}
+.horizontal{
+    width: 6.6vw;
+    height: 5vw;
+    background-color: rgb(26, 26, 26);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.horizontal:hover{
+    background-color: rgb(8, 8, 8);
+    cursor: pointer;
+}
+.horizontal p{
+    font-family: 'Amaranth', sans-serif;
+    color: white;
+    font-size: 2vw;
+}
+
+#nowdrop, #nextdrop, #lastdrop {
+    position: fixed;
+    margin-top: 13vw;
+    width: 6.6vw;
+    height:8vw;
+
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+    transform: scale(0);
+    /* edit above */
+}
+
+.dropbox {
+    width: 6.6vw;
+    height: 5vw;
+    background-color: rgb(26, 26, 26);
+    font-family: 'Amaranth', sans-serif;
+    color: white;
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dropbox:hover{
+    background-color: rgb(8, 8, 8);
+}
+
+#nowhover:hover > #nowdrop{
+    transform: scale(1);
+}
+#twentyhover:hover > #nextdrop{
+    transform: scale(1);
+}
+
+#sevenhover:hover > #lastdrop{
+    transform: scale(1);
+}
+
+#showmore{
+    height: 3vw;
+    padding-inline: 1vw;
+    background-color: aqua;
+    position: fixed;
+    bottom: 10vw;
+    left: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(26, 26, 26);
+    transition: 0.3s;
+}
+#volcmore{
+    height: 3vw;
+    padding-inline: 1vw;
+    background-color: aqua;
+    position: fixed;
+    top: 4vw;
+    right: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(26, 26, 26);
+    transition: 0.3s;
+}
+#volcmore:hover{
+    background-color: rgb(8, 8, 8);
+    cursor: pointer;
+}
+
+#volcmore p{
+    font-family: 'Amaranth', sans-serif;
+    color: white;
+    font-size: 2vw;
+}
+#showmore:hover{
+    background-color: rgb(8, 8, 8);
+    cursor: pointer;
+}
+
+#showmore p{
+    font-family: 'Amaranth', sans-serif;
+    color: white;
+    font-size: 2vw;
+}
+#quakeholder{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+#morequakes{
+    background-color: rgb(218, 224, 230);
+    height: 50vh;
+    width: 80vw;
+    padding: 1vw;
+    border-radius: 1vw;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+#volcholder{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+#morevolc{
+    background-color: rgb(218, 224, 230);
+    height: 50vh;
+    width: 80vw;
+    padding: 1vw;
+    border-radius: 1vw;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.quakeid{
+    width: 80vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+}
+.volcanoid{
+    width: 80vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+}
+.idname{
+    width: 40vw;
+    height: 10vh;
+    border-right: solid;
+    border-color: black;
+    border-width: 0.3vw;
+    margin-bottom: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Amaranth', sans-serif;
+    color: #000000;
+    font-size: 1.2vw;
+}
+.threatlevelnamettl{
+    width: 40vw;
+    height: 10vh;
+    border-right: solid;
+    border-color: black;
+    border-width: 0.3vw;
+    margin-bottom: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Amaranth', sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 1.2vw;
+}
+.threatlevelname{
+    width: 40vw;
+    height: 10vh;
+    border-right: solid;
+    border-color: black;
+    border-width: 0.3vw;
+    margin-bottom: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Amaranth', sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 1.2vw;
+}
+.placename{
+    width: 30vw;
+    height: 10vh;
+    border-right: solid;
+    border-color: black;
+    border-width: 0.3vw;
+    margin-bottom: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Amaranth', sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 1.2vw;
+}
+.vplacename{
+    width: 40vw;
+    height: 10vh;
+    border-right: solid;
+    border-color: black;
+    border-width: 0.3vw;
+    margin-bottom: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Amaranth', sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 1.2vw;
+}
+.magnitudevalue{
+    width: 10vw;
+    height: 10vh;
+    border-right: solid;
+    border-color: black;
+    border-width: 0.3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Amaranth', sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 1.2vw;
+}
+.longitudevalue{
+    width: 20vw;
+    height: 10vh;
+    border-right: solid;
+    border-color: black;
+    border-width: 0.3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Amaranth', sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 1.2vw;
+}
+.latitudevalue{
+    width: 20vw;
+    height: 10vh;
+    border-color: black;
+    border-width: 0.3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Amaranth', sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 1.2vw;
+}
+#nameborder, #magborder, #latborder, #lonborder{
+    background-color: rgb(27, 26, 26);
+    font-family: 'Amaranth', sans-serif;
+    color: white;
+    font-size: 1.8vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#closeinfo{
+    width: 5vw;
+    height: 5vw;
+    background-color: rgb(26, 26, 26);
+    position: relative;
+    right: 43.5vw;
+    top: 32vh;
+    border-radius: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+#closeinfo:hover{
+    background-color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+#closeinfo p{
+    color:rgb(119, 14, 14);
+    transform: rotate(45deg);
+    font-family: 'Amaranth', sans-serif;
+    font-size: 8vw;
+    text-align: center;
+    position: relative;
+    left: 0.4vw;
+    bottom: 0.6vh;
+    user-select: none;
+    transition: 0.8s;
+}
+#closeinfo:hover > p{
+    color: red;
+}
+
+
+#closevolc{
+    width: 5vw;
+    height: 5vw;
+    background-color: rgb(26, 26, 26);
+    position: relative;
+    right: 43.5vw;
+    top: 33vh;
+    border-radius: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+#closevolc:hover{
+    background-color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+#closevolc p{
+    color:rgb(119, 14, 14);
+    transform: rotate(45deg);
+    font-family: 'Amaranth', sans-serif;
+    font-size: 8vw;
+    text-align: center;
+    position: relative;
+    left: 0.4vw;
+    bottom: 0.6vh;
+    user-select: none;
+    transition: 0.8s;
+}
+#closevolc:hover > p{
+    color: red;
+}
+
+
+#fakequake{
+    position: fixed;
+    left: 17vw;
+    bottom: 18vw;
+}
+#fakequake2{
+    position: fixed;
+    right: 8vw;
+    bottom: 15vw;
+}
+#fakequake3{
+    position: fixed;
+    right: 44vw;
+    bottom: 27vw;
+}
+
+.popfx1{
+    position: fixed;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    border: 5px;
+    border-style: solid;
+    border-color: rgba(253, 0, 0, 0.603);
+    transform: scale(0);
+    animation: btnflash 18s infinite ease-out;
+    animation-delay: 3.5s;
+}
+.popfx2{
+    position: fixed;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    border: 5px;
+    border-style: solid;
+    border-color: rgba(253, 0, 0, 0.603);
+    transform: scale(0);
+    animation: btnflash 18s infinite ease-out;
+    animation-delay: 3.8s;
+}
+.popfx3{
+    position: fixed;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    border: 5px;
+    border-style: solid;
+    border-color: rgba(253, 0, 0, 0.603);
+    transform: scale(0);
+    animation: btnflash 18s infinite ease-out;
+    animation-delay: 4.1s;
+}
+.popfx4{
+    position: fixed;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    border: 5px;
+    border-style: solid;
+    border-color: rgba(253, 0, 0, 0.603);
+    transform: scale(0);
+    animation: btnflash 18s infinite ease-out;
+    animation-delay: 4.4s;
+}
+.popfx5{
+    position: fixed;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    border: 5px;
+    border-style: solid;
+    border-color: rgba(253, 0, 0, 0.603);
+    transform: scale(0);
+    animation: btnflash2 8s infinite ease-out;
+    animation-delay: 14.5s;
+}
+.popfx6{
+    position: fixed;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    border: 5px;
+    border-style: solid;
+    border-color: rgba(253, 0, 0, 0.603);
+    transform: scale(0);
+    animation: btnflash2 8s infinite ease-out;
+    animation-delay: 14.8s;
+}
+.popfx7{
+    position: fixed;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    border: 5px;
+    border-style: solid;
+    border-color: rgba(253, 0, 0, 0.603);
+    transform: scale(0);
+    animation: btnflash2 8s infinite ease-out;
+    animation-delay: 15.1s;
+}
+.popfx8{
+    position: fixed;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    border: 5px;
+    border-style: solid;
+    border-color: rgba(253, 0, 0, 0.603);
+    transform: scale(0);
+    animation: btnflash2 8s infinite ease-out;
+    animation-delay: 15.4s;
+}
+.popfx9{
+    position: fixed;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    border: 5px;
+    border-style: solid;
+    border-color: rgba(253, 0, 0, 0.603);
+    transform: scale(0);
+    animation: btnflash 13s infinite ease-out;
+    animation-delay: 22.2s;
+}
+.popfx10{
+    position: fixed;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    border: 5px;
+    border-style: solid;
+    border-color: rgba(253, 0, 0, 0.603);
+    transform: scale(0);
+    animation: btnflash 13s infinite ease-out;
+    animation-delay: 22.5s;
+}
+.popfx11{
+    position: fixed;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    border: 5px;
+    border-style: solid;
+    border-color: rgba(253, 0, 0, 0.603);
+    transform: scale(0);
+    animation: btnflash 13s infinite ease-out;
+    animation-delay: 22.8s;
+}
+.popfx12{
+    position: fixed;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    border: 5px;
+    border-style: solid;
+    border-color: rgba(253, 0, 0, 0.603);
+    transform: scale(0);
+    animation: btnflash 13s infinite ease-out;
+    animation-delay: 23.1s;
+}
+  
+@keyframes btnflash {
+    0% {
+        transform: scale(0);
+    }
+    11% {
+        transform: scale(3);
+      }
+    12% {
+      transform: scale(3);
+      opacity: 0;
+    }
+    75% {
+        transform: scale(3);
+        opacity: 0;
+     }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+     }
+}
+@keyframes btnflash2 {
+    0% {
+        transform: scale(0);
+    }
+    20% {
+        transform: scale(1.5);
+      }
+    21% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+    75% {
+        transform: scale(1.5);
+        opacity: 0;
+     }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+     }
+}

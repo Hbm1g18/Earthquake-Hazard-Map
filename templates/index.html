@@ -1,193 +1,675 @@
-{% include 'base.html' %}
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="{{ url_for('static',filename='styles/eqstyle.css') }}" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amaranth:wght@700&amp;family=Josefin+Sans:ital,wght@1,700&amp;family=Mochiy+Pop+One&amp;display=swap" rel="stylesheet">
+  <style>
+
+  </style>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.14/esri/themes/light/main.css" />
+
+</head>
+
+
 <body>
+<style>
+  body {
+    background: url("{{ url_for('static',filename='images/bg/bg.jpg') }}") no-repeat center center fixed;
+    background-size: cover;
+  }
+</style>
+<div id="fakequake">
+  <div class="popfx1"></div>
+  <div class="popfx2"></div>
+  <div class="popfx3"></div>
+  <div class="popfx4"></div>
+</div>
+<div id="fakequake2">
+  <div class="popfx5"></div>
+  <div class="popfx6"></div>
+  <div class="popfx7"></div>
+  <div class="popfx8"></div>
+</div>
+<div id="fakequake3">
+  <div class="popfx9"></div>
+  <div class="popfx10"></div>
+  <div class="popfx11"></div>
+  <div class="popfx12"></div>
+</div>
+
+
+
+  <div id="latest-earthquake">
+    <div id="infocenter">
+      <div id="quakeinfo">
+        <div id="ttl">
+          <h1 id="eqttl">Latest Earthquake >2.5</h1>
+        </div>
+        <div id="loc">
+          <p id="eqloc">Location: {{ earthquake['Place'] }}</p>
+        </div>
+        <div id="mag">
+          <p id="eqmag">Magnitude: {{ earthquake['Mag'] }}</p>
+        </div>
+          <p id="eqtime" style="display: none;">{{ earthquake['Time'] }}</p>
+          <p id="twoeqtime" style="display: none;">{{ latestearthquake['Time'] }}</p>
+        <div id="realtime">
+          <p id="realeqtime"></p>
+        </div>
+          <p id="lat" style="display: none;">{{ earthquake['Lat'] }}</p><p id="lon" style="display: none;">{{ earthquake['Lon'] }}</p>
+          <p id="lat2" style="display: none;">{{ latestearthquake['Lat'] }}</p><p id="lon2" style="display: none;">{{ latestearthquake['Lon'] }}</p>
+        </div>
+    </div>
+
+    <div id="mapcenter">
+      <div id="mapholder">
+        <div id="viewDiv" class="map"></div>
+        <div id="viewDiv2" class="squaremap"></div>
+        <div id="viewDiv7" class="map"></div>
+        <div id="viewDiv8" class="squaremap"></div>
+      </div>
+    </div>
+
+    <div id="change">
+
+      <div id="changehorizontal">
+          <div class="horizontal" id="nowhover">
+            <p>Size</p>
+            <div id="nowdrop">
+              <div class="dropbox" id="latesteq">
+                <p>Latest</p>
+              </div>
+              <div class="dropbox" id="lattwo">
+                <p>>2.5</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="horizontal" id="twentyhover">
+            <p>24hrs</p>
+            <div id="nextdrop">
+              <div class="dropbox">
+                <p>Latest</p>
+              </div>
+              <div class="dropbox">
+                <p>>2.5</p>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- <div class="horizontal" id="sevenhover">
+            <p>7 Day</p>
+            <div id="lastdrop">
+              <div class="dropbox">
+                <p>Latest</p>
+              </div>
+              <div class="dropbox">
+                <p>>2.5</p>
+              </div>
+            </div>
+          </div> -->
+
+
+      </div>
+
+      
+
+    </div>
+
+    <div id="showmore">
+      <p>Show last hour</p>
+    </div>
+
+    <div id="quakeholder">
+      <div id="morequakes">
+        <div class="quakeid">
+          <div class="placename" id="nameborder">
+            Location
+          </div>
+          <div class="magnitudevalue" id="magborder">
+            Magnitude
+          </div>
+          <div class="longitudevalue" id="lonborder">
+            Longitude
+          </div>
+          <div class="latitudevalue" id="latborder">
+            Latitude
+          </div>
+        </div>
+        {%for x in listeqdict%}
+          <div class="quakeid">
+            <div class="placename">
+              {{ x['Place2'] }}
+            </div>
+            <div class="magnitudevalue">
+              {{ x['Mag2'] }}
+            </div>
+            <div class="longitudevalue">
+              {{ x['Lat2'] }}
+            </div>
+            <div class="latitudevalue">
+              {{ x['Lon2'] }}
+            </div>
+          </div>
+        {%endfor%}
+      </div>
+      <div id="closeinfo">
+        <p>+</p>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  
+
+  <div id="volcano-map">
+    <div id="vttl">
+      <h1>Volcano hazard map</h1>
+    </div>
+    <div id="viewDiv3"></div>
+    <p id="vlat" style="display: none;">{{ volcanoinfo['vlat'] }}</p><p id="vlon" style="display: none;">{{ volcanoinfo['vlng'] }}</p>
+    <div id="divholder">
+      {%for i in volcanoinfo%}
+        <div class="volcdiv">
+          <p class="volcanoname" style="display: none;">{{ i['name'] }}</p>
+          <p class="volcanolat" style="display: none;">{{ i['vlat'] }}</p>
+          <p class="volcanolon" style="display: none;">{{ i['vlng'] }}</p>
+          <p class="volcanoelev" style="display: none;">{{ i['elev'] }}</p>
+          <p class="volcanoobs" style="display: none;">{{ i['obs'] }}</p>
+        </div>
+      {%endfor%}
+    </div>
+
+    <div id="volcmore">
+      <p>Threat Table</p>
+    </div>
+
+    <div id="volcholder">
+      <div id="morevolc">
+        <div class="volcanoid">
+          <div class="vplacename" id="nameborder">
+            Volcano Name
+          </div>
+          <div class="threatlevelnamettl" id="magborder">
+            Threat Level
+          </div>
+        </div>
+        {%for x in volcano_threats%}
+          <div class="volcanoid">
+            <div class="vplacename">
+              {{ x['name'] }}
+            </div>
+            <div class="threatlevelname">
+              {{ x['threat'] }}
+            </div>
+          </div>
+        {%endfor%}
+      </div>
+      <div id="closevolc">
+        <p>+</p>
+      </div>
+    </div>
     
-<a href="#top" class="arrow" aria-label="Back to top" title="Back to top">↑</a>
-<a href="#section2" class="arrow2" aria-label="Down" title="Go down">↓</a>
+  </div>
 
-<div id="getname">
-	<div id="namebody">
-		<h1 id="messed">Hey, who is this?</h1>
-		<input type="text" id="login_name" placeholder="Your Name" >
-		<div id="namebtn">
-            <h1>Ok!</h1>
-        </div>
-		<div id="namecloser">+</div>
-	</div>
-</div>
 
-<!-- Alert button -->
-<a href="#" class="alert">
-    <div id="alertbox">
-        <div id="alertimg">
-            <img src="{{ url_for('static',filename='images/alert.png') }}" alt="Alert">
-        </div>
-        <div id="alertmsg">
-            <h1>Mobile version under construction</h1>
-        </div>
+  <div id="hamburger">
+    <div id="top"></div>
+    <div id="mid"></div>
+    <div id="bot"></div>
+    <div id="menu" class="menu">
+      <div class="menubtn" id="lateq">Latest Earthquake</div>
+      <div class="menubtn" id="volc">Volcanic Hazard Map</div>
     </div>
-</a>
-<!-- Linked In Button -->
-<a href="https://www.linkedin.com/in/harry-bonshor-mayes-5a2236199/" target="_blank" class="linkedin" id="linkedinbutton" aria-label="My LinkedIn" title="LinkedIn">
-    <div id="linkcontainer">
-        <div id="linkedbox">
-            <img src="{{ url_for('static',filename='images/linked.png') }}" alt="My LinkedIn">
-        </div>
-        <div id="linktext">
-            <h1>Check out my LinkedIn!</h1>
-        </div>
-    </div>
-</a>
+  </div>
 
-<!-- modal section -->
-<!-- Li popup -->
-<div class="bg-modal">
-	<div class="modal-contents">
-		<img src="{{ url_for('static',filename='images/modalimg.jpg') }}" alt="Have a Donut">
-		<h1>Thanks for checking out my LinkedIn, it means a lot.
-			<br><br> Have a donut.
-		</h1>
-		<div class="closemodal" id="modalcloser">+</div>
-	</div>
-
-</div>
-<!-- modal end -->
-
-
-<!-- The body -->
-<div class="container">
-    <div class="box1" id="section1">
-        <div class="starter">
-            <h1 id="name">Hi. I'm Harry</h1>
-            <!-- <script>
-                var username = prompt("Hello, who are you?");
-
-                if(username.toLowerCase()==="yunzhen") {
-                    document.write("<h1>Hello " + username[0].toUpperCase() + username.substring(1) + " I love you</h1>");
-                }
-                else {
-                     document.write("<h1>Hi " + username[0].toUpperCase() + username.substring(1) + ". I'm Harry</h1>");
-                }
-                </script>    -->
-            <div class="aboutme">
-                <p1>I'm an Msci Geology graduate from the University of Southampton looking to gain experience in the geology sector. Checkout my work on the <a href="/projects" style="text-decoration: none; color: inherit;">'Projects'</a> page or read more about me on the <a href="/about" style="text-decoration: none; color: inherit;">'About'</a> page. Feel free to get in touch with me below.</p1>
-            </div><a href="#section2" style="text-decoration: none; color: inherit;">
-                <div class="contactme">
-                    <h1>Contact me</h1>
-                </div>
-            </a>
-        </div>
-    <a href="{{ url_for('static',filename='images/uos.JPG') }}" data-lightbox="uos" data-title="Universtiy of Southampton">	
-        <div class="uos">
-			<img src="{{ url_for('static',filename='images/uos.JPG') }}" alt="University of southampton">
-		</div>
-    </a>
-    <a id="yzh" href="{{ url_for('static',filename='images/yzh.JPG') }}" data-lightbox="yzh" data-title="Harry and Yunzhen">	    
-        <div class="yzh">
-			<img src="{{ url_for('static',filename='images/yzh.JPG') }}" alt="Me and Yunzhen">
-		</div>
-    </a>    
-    </div>
-    <div class="containerspacer"></div>
-    <div class="box2" id="section2">
-        <div id="contactcontain">
-            <div id="mobilesec">
-                <img src="{{ url_for('static',filename='images/phone.png') }}" alt="Call me!" style="height:10rem; width:8rem;">
-                <h1>Call or text me at: 07753127952</h1>
-            </div>
-            <div id="emailsec">
-                <img src="{{ url_for('static',filename='images/email.png') }}" alt="Send me an email!">
-                <h1>Or, send me an email at: harrybonshormayes@gmail.com</h1>
-            </div>
-            <div id="formspacer">
-                <h1>Or, fill out this form directly.</h1>
-            </div>
-            <div id="jsform">
-                <form onsubmit="sendEmail(); reset(); return false">
-                    <h3>Please enter the following information below:</h3>
-                    <input type="text" id="Name" placeholder="Your Name" required>
-                    <input type="email" id="Email" placeholder="Your email address" required>
-                    <input type="text" id="phonenum" placeholder="Phone number" required>
-                    <textarea id="message" rows="4" placeholder="Please write your message here"></textarea>
-                    <button type="submit">Send your message</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- li popup -->
-<script>
-	document.getElementById('linkedinbutton').addEventListener('click', function(){
-		document.querySelector('.bg-modal').style.display = 'flex';
-	})
-</script>
-<script>
-	document.getElementById('modalcloser').addEventListener('click', function(){
-		document.querySelector('.bg-modal').style.display = 'none';
-	})
-</script>
-<!-- li popup end -->
-
-
-<!-- JavaScript -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="{{ url_for('static',filename='lightbox/dist/js/lightbox.js') }}"></script>
-<script src="https://smtpjs.com/v3/smtp.js"></script>
-<!-- Email bit -->
-<script>
-    function sendEmail(){
-        Email.send({
-            SecureToken: "6df11250-d898-4e41-87a3-4056db8b3c3b",
-            To : "harrybonshormayes@gmail.com",
-            From : "harrybonshormayes@gmail.com",
-            Subject : document.getElementById("Name").value + " sent an email from the website",
-            Body : "Name: " + document.getElementById("Name").value
-            + "<br> Email: " + document.getElementById("Email").value
-            + "<br> Phone Number: " + document.getElementById("phonenum").value
-            + "<br> Message: " + document.getElementById("message").value 
-        }).then(
-        message => alert("Thanks for your message, I'll get back to you soon")
-        );
-    }
-</script>
-<!-- new -->
-<script>
-	var edit2 = document.querySelector("#name");
-
-	document.getElementById('namebtn').addEventListener('click', function(){
-	var nombre = document.getElementById('login_name').value;
-	
-	if(nombre.toLowerCase()==="yunzhen") {
-                edit2.innerHTML = ("<h1>Hello " + nombre[0].toUpperCase() + nombre.substring(1) + " I love you</h1>");
-				document.querySelector('#getname').style.display = 'none';
-            }
-            else {
-                edit2.innerHTML = ("<h1>Hi " + nombre[0].toUpperCase() + nombre.substring(1) + ". I'm Harry</h1>");
-				document.querySelector('#getname').style.display = 'none';
-            }	
-
-	})
-</script>
-<script>
-	document.getElementById('namecloser').addEventListener('click', function(){
-		document.querySelector('#getname').style.display = 'none';
-	})
-</script>
-
-
-
-<!-- Login bit -->
-<!-- <script>
-    var edit = document.querySelector("#name");
-    var username = prompt("Hello, who are you?");
-
-    if(username.toLowerCase()==="yunzhen") {
-                    edit.innerHTML = ("<h1>Hello " + username[0].toUpperCase() + username.substring(1) + " I love you</h1>");
-                }
-                else {
-                    edit.innerHTML = ("<h1>Hi " + username[0].toUpperCase() + username.substring(1) + ". I'm Harry</h1>");
-                }
-</script> -->
 </body>
-</html>
+
+<script>
+var volchold = document.getElementById('morevolc');
+var threatlevel = volchold.getElementsByClassName('threatlevelname');
+
+
+for (var i = 0; i < threatlevel.length; i += 1) {
+  if (threatlevel[i].textContent.includes('High')){
+    threatlevel[i].style.backgroundColor = "#ff0000";
+  }else if (threatlevel[i].textContent.includes('Very High')) {
+    threatlevel[i].style.backgroundColor = "#8b1212";
+  }else if (threatlevel[i].textContent.includes('None')) {
+    threatlevel[i].style.backgroundColor = "#99f882";
+  }else if (threatlevel[i].textContent.includes('Moderate Threat')) {
+    threatlevel[i].style.backgroundColor = "#fdc200";
+  }else if (threatlevel[i].textContent.includes('Low Threat')) {
+    threatlevel[i].style.backgroundColor = "#e6ff57";
+  }
+}
+</script>
+
+
+<!-- Time converters -->
+<script>
+  var time = document.getElementById('eqtime').innerHTML
+  var dateTime = new Date((time + 500)/1000);
+  var formatted = dateTime.toGMTString();
+  document.getElementById('realeqtime').innerHTML = formatted
+</script>
+
+<script>
+  var time2 = document.getElementById('twoeqtime').innerHTML
+  var dateTime2 = new Date((time2 + 500)/1000);
+  var formatted2 = dateTime2.toGMTString();
+</script>
+<!-- Time converter end -->
+
+<script>
+  document.getElementById('latesteq').addEventListener('click', function() {
+    document.getElementById('eqttl').innerHTML = "Latest Earthquake";
+    document.getElementById('eqloc').innerHTML = "Location: {{ latestearthquake['Place'] }}";
+    document.getElementById('eqmag').innerHTML = "Magnitude: {{ latestearthquake['Mag'] }}";
+    document.getElementById('lat').innerHTML = "{{ latestearthquake['Lat'] }}";
+    document.getElementById('lon').innerHTML = "{{ latestearthquake['Lon'] }}";
+    document.getElementById('realeqtime').innerHTML = formatted2;
+    document.getElementById('viewDiv').style.display = 'none';
+    document.getElementById('viewDiv2').style.display = 'none';
+    document.getElementById('viewDiv7').style.display = 'flex';
+    document.getElementById('viewDiv8').style.display = 'flex';
+    })
+</script>
+
+<script>
+     document.getElementById('lattwo').addEventListener('click', function() {
+     document.getElementById('eqttl').innerHTML = "Latest Earthquake >2.5";
+     document.getElementById('eqloc').innerHTML = "Location: {{ earthquake['Place'] }}";
+     document.getElementById('eqmag').innerHTML = "Magnitude: {{ earthquake['Mag'] }}";
+     document.getElementById('lat').innerHTML = "{{ earthquake['Lat'] }}";
+     document.getElementById('lon').innerHTML = "{{ earthquake['Lon'] }}";
+     document.getElementById('realeqtime').innerHTML = formatted;
+     document.getElementById('viewDiv').style.display = 'flex';
+    document.getElementById('viewDiv2').style.display = 'flex';
+    document.getElementById('viewDiv7').style.display = 'none';
+    document.getElementById('viewDiv8').style.display = 'none';
+   })
+</script>
+
+
+
+<script src="https://js.arcgis.com/4.14/"></script>
+<!-- eq map -->
+<script>
+  require(["esri/Map", 
+  "esri/views/MapView",
+  "esri/Graphic",
+  "esri/widgets/BasemapToggle",
+  "esri/widgets/BasemapGallery"], 
+  function(Map,
+  MapView,
+  Graphic,
+    BasemapToggle,
+    BasemapGallery
+   )
+   {
+      var map = new Map({
+        basemap: "topo"
+      });
+      var view = new MapView({
+        container: "viewDiv", 
+        map: map, 
+        zoom: 7, 
+        center: [javalon, javalat], 
+      });
+
+    var point = {
+        type: "point",
+        longitude: javalon,
+        latitude: javalat,
+    };
+
+    var markerSymbol = {
+        type: "simple-marker",
+        color: [226, 119, 40],
+  outline: {
+      color: [0, 0, 0],
+      width: 2
+  }
+    }
+
+    var pointGraphic = new Graphic({
+        geometry: point,
+        symbol: markerSymbol,
+    })
+    view.graphics.add(pointGraphic);
+   
+    
+    });
+</script>
+
+<script>
+var map;
+javalat = document.getElementById("lat").innerHTML;
+javalon = document.getElementById("lon").innerHTML;
+javalat2 = document.getElementById("lat2").innerHTML;
+javalon2 = document.getElementById("lon2").innerHTML;
+javavlat = document.querySelector(".volcanolat").innerHTML;
+javavlon = document.querySelector(".volcanolon").innerHTML;
+
+require([
+  "esri/map", "esri/geometry/webMercatorUtils", "dojo/dom",  "esri/config",
+  "dojo/domReady!",
+  "esri/layers/FeatureLayer",
+  
+], function(
+  Map, esriConfig, webMercatorUtils, dom
+) {
+  esriConfig.apiKey = "AAPKe19f8d9fa7244403a0724025389d650fkLXD3IR8eyIrHO4nJSYeASjxL7i9pxhcOiJKUmgBYWDUd7nerMMaULRjf4HP8qaO";
+  map = new Map("map", {
+    basemap: "topo",
+    center: [javalon, javalat],  
+  //   DO THIS
+    zoom: 8
+  });
+  // 
+  
+  // 
+  map.on("load", function() {
+
+  });
+
+
+});
+
+</script>
+<!-- DONT DELETE -->
+<!-- Square map -->
+<script>
+require(["esri/Map", 
+"esri/views/MapView",
+"esri/Graphic",
+"esri/widgets/BasemapToggle",
+"esri/widgets/BasemapGallery"], 
+function(Map,
+MapView,
+Graphic,
+  BasemapToggle,
+  BasemapGallery
+ )
+ {
+    var map2 = new Map({
+      basemap: "topo"
+    });
+    var view = new MapView({
+      container: "viewDiv2", 
+      map: map2, 
+      zoom: 3, 
+      center: [javalon, javalat], 
+    });
+
+  var point = {
+      type: "point",
+      longitude: javalon,
+      latitude: javalat,
+  };
+
+  var markerSymbol = {
+      type: "simple-marker",
+      style: "square",
+      size: "20",
+      // color: [226, 119, 40],
+outline: {
+    color: [255, 0, 0],
+    width: 2
+}
+  }
+
+  var pointGraphic2 = new Graphic({
+      geometry: point,
+      symbol: markerSymbol,
+  })
+  view.graphics.add(pointGraphic2);
+ 
+  
+  });
+</script>
+
+<script>
+  var div = document.getElementById('divholder');
+
+  var divs = div.getElementsByClassName('volcdiv');
+  var divArray = [];
+
+for (var i = 0; i < divs.length; i += 1) {
+console.log(divs[i])
+var volcanoname = divs[i].querySelector(".volcanoname").innerHTML
+var volcanolat = divs[i].querySelector(".volcanolat").innerHTML
+var volcanolon = divs[i].querySelector(".volcanolon").innerHTML
+var volcanoelev = divs[i].querySelector(".volcanoelev").innerHTML
+var volcanoobs = divs[i].querySelector(".volcanoobs").innerHTML
+divArray.push({"volcanoname":volcanoname, "volcanolat": volcanolat, "volcanolon": volcanolon, "volcanoelev": volcanoelev, "volcanoobs": volcanoobs });
+}
+document.getElementById("result").innerHTML  = JSON.stringify(divArray[4].volcanoname);
+</script>
+
+
+<script>
+  require(["esri/Map", 
+  "esri/views/MapView",
+  "esri/Graphic",
+  "esri/widgets/BasemapToggle",
+  "esri/widgets/BasemapGallery"], 
+  function(Map,
+  MapView,
+  Graphic,
+    BasemapToggle,
+    BasemapGallery
+   )
+   {
+      var map3 = new Map({
+        basemap: "topo"
+      });
+      var view3 = new MapView({
+        container: "viewDiv3", 
+        map: map3, 
+        zoom: 2, 
+        center: [-130,15], 
+      });
+
+for (var i = 0; i < divs.length; i += 1) {
+
+        function random_rgba() {
+          var o = Math.round, r = Math.random, s = 255;
+          return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+      }
+
+      var randomcolor = random_rgba();
+
+      const popupTemplate = {
+          title: "{Name}",
+          content: "{Description}"
+      }
+      const attributes = {
+          Name: divArray[i].volcanoname,
+          Description: "Longitude and Latitude: " + divArray[i].volcanolon + " " + divArray[i].volcanolat + " Elevation: " + divArray[i].volcanoelev + "M. Observation: " + divArray[i].volcanoobs + "."
+      }
+      
+   var point3 = {
+        type: "point",
+        longitude: divArray[i].volcanolon,
+        latitude: divArray[i].volcanolat,
+    };
+
+    var markerSymbol3 = {
+        type: "simple-marker",
+        color: randomcolor,
+  outline: {
+      color: [0, 0, 0],
+      width: 1.5
+  }
+    }
+
+    var pointGraphic3 = new Graphic({
+        geometry: point3,
+        symbol: markerSymbol3,
+
+        attributes: attributes,
+        popupTemplate: popupTemplate
+    })
+
+    view3.graphics.add(pointGraphic3);
+  }
+    
+    });
+</script>
+
+
+
+<script>
+  document.getElementById('lateq').addEventListener('click', function() {
+    document.getElementById('latest-earthquake').style.display = 'flex';
+    document.getElementById('volcano-map').style.display = 'none';
+  })
+</script>
+
+<script>
+  document.getElementById('volc').addEventListener('click', function() {
+    document.getElementById('latest-earthquake').style.display = 'none';
+    document.getElementById('volcano-map').style.display = 'flex';
+  })
+</script>
+
+<script>
+  document.getElementById('closeinfo').addEventListener('click', function() {
+    document.getElementById('quakeholder').style.display = 'none';
+  })
+</script>
+
+<script>
+  document.getElementById('showmore').addEventListener('click', function() {
+    document.getElementById('quakeholder').style.display = 'flex';
+  })
+</script>
+
+
+<script>
+  document.getElementById('closevolc').addEventListener('click', function() {
+    document.getElementById('volcholder').style.display = 'none';
+  })
+</script>
+
+<script>
+  document.getElementById('volcmore').addEventListener('click', function() {
+    document.getElementById('volcholder').style.display = 'flex';
+  })
+</script>
+
+<!-- Square map -->
+<script>
+javalat = document.getElementById("lat").innerHTML;
+javalon = document.getElementById("lon").innerHTML;
+javalat2 = document.getElementById("lat2").innerHTML;
+javalon2 = document.getElementById("lon2").innerHTML;
+
+  require(["esri/Map", 
+  "esri/views/MapView",
+  "esri/Graphic",
+  "esri/widgets/BasemapToggle",
+  "esri/widgets/BasemapGallery"], 
+  function(Map,
+  MapView,
+  Graphic,
+    BasemapToggle,
+    BasemapGallery
+   )
+   {
+      var map7 = new Map({
+        basemap: "topo"
+      });
+      var view7 = new MapView({
+        container: "viewDiv7", 
+        map: map7, 
+        zoom: 3, 
+        center: [javalon2, javalat2], 
+      });
+  
+    var point = {
+        type: "point",
+        longitude: javalon2,
+        latitude: javalat2,
+    };
+  
+    var markerSymbol7 = {
+        type: "simple-marker",
+        color: [226, 119, 40],
+      outline: {
+          color: [0, 0, 0],
+          width: 2
+      }
+    }
+  
+    var pointGraphic7 = new Graphic({
+        geometry: point,
+        symbol: markerSymbol7,
+    })
+    view7.graphics.add(pointGraphic7);
+   
+    
+    });
+  </script>
+
+<script>
+javalat = document.getElementById("lat").innerHTML;
+javalon = document.getElementById("lon").innerHTML;
+javalat2 = document.getElementById("lat2").innerHTML;
+javalon2 = document.getElementById("lon2").innerHTML;
+
+  require(["esri/Map", 
+  "esri/views/MapView",
+  "esri/Graphic",
+  "esri/widgets/BasemapToggle",
+  "esri/widgets/BasemapGallery"], 
+  function(Map,
+  MapView,
+  Graphic,
+    BasemapToggle,
+    BasemapGallery
+   )
+   {
+      var map8 = new Map({
+        basemap: "topo"
+      });
+      var view8 = new MapView({
+        container: "viewDiv8", 
+        map: map8, 
+        zoom: 7, 
+        center: [javalon2, javalat2], 
+      });
+
+    var point8 = {
+        type: "point",
+        longitude: javalon2,
+        latitude: javalat2,
+    };
+
+    var markerSymbol8 = {
+      type: "simple-marker",
+      style: "square",
+      size: "20",
+      // color: [226, 119, 40],
+    outline: {
+        color: [255, 0, 0],
+        width: 2
+    }
+    }
+
+    var pointGraphic8 = new Graphic({
+        geometry: point8,
+        symbol: markerSymbol8,
+    })
+    view8.graphics.add(pointGraphic8);
+   
+    
+    });
+</script>
