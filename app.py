@@ -71,9 +71,6 @@ def index():
             for i in vmap]
 
     print(volcano_threats)
-    # print(volcanoinfo)
-    # print(earthquake)
-    # print(latestearthquake)
     print(listeqdict)
 
 
